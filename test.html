@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion with Display Panel</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #FCFAEB;
+            padding: 50px;
+            display: flex;
+            /* gap: 70px; */
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .e-container{
+            display: flex;
+            flex-direction: row; 
+            width: 95%
+        }
+        /* Accordion Container */
+        .e-accordion {
+            width: 55%;
+            /* background: #FFF; */
+            border-radius: 10px;
+            padding: 10px;
+            /* border-left: 4px solid #2E7D62; */
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+        }
+
+        .e-accordion-item {
+            border-bottom: 1px solid #E0E0E0;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .e-accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .e-accordion-header {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            /* gap: 90px; */
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .e-accordion-header:hover {
+            background-color: #F5F5F5;
+        }
+
+        .icon {
+            transition: transform 0.3s ease;
+        }
+
+        .active .icon {
+            transform: rotate(180deg);
+        }
+
+        .e-accordion-content {
+            display: none;
+            padding: 15px;
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .e-accordion-content.active {
+            display: block;
+        }
+
+        /* Default: No border on inactive items */
+.e-accordion-item {
+    border-left: 4px solid transparent;
+    transition: border 0.3s ease;
+}
+
+/* Active item: Dark green left border */
+.e-accordion-item.active {
+    border-left: 4px solid #267CFC;
+}
+
+        .e-display-panel {
+            margin-top: 20px;
+    margin-left: 30px;
+    position: relative;
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 80%;
+    max-width: 900px;
+    min-height: 150px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Animated Gradient Border */
+.e-display-panel::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: linear-gradient(45deg, #267CFC, #FF6B00, #FFC300, #2ECC71, #7D3C98, #0072FF, #E91E63, #267CFC);
+    background-size: 300%;
+    border-radius: 20px;
+    z-index: -1;
+    animation: moveGradient 6s linear infinite;
+}
+
+
+.e-display-panel h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 15px;
+}
+
+/* Highlighted text in h2 */
+.e-display-panel h2 .highlight {
+    color: #267CFC;
+}
+
+/* Style the paragraph */
+.e-display-panel .content-text {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Animate the Gradient */
+@keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Individual gradient styles */
+.e-gradient-1::before {
+    background: linear-gradient(45deg, #267CFC, #FF6B00); /* Blue + Vibrant Orange */
+}
+.e-gradient-2::before {
+    background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
+}
+.e-gradient-3::before {
+    background: linear-gradient(45deg, #7D3C98, #0072FF); /* Deep Purple + Rich Blue */
+}
+.e-gradient-4::before {
+    background: linear-gradient(45deg, #E91E63, #267CFC); /* Bold Pink + Primary Blue */
+}
+
+@media (max-width: 768px) {
+    .e-accordion {
+        width: 100%;
+    }
+    .e-display-panel{
+        width: 90%;
+    }
+}
+@media (max-width: 425px) {
+    .e-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    }
+    .e-accordion {
+        width: 100%;
+    }
+    .e-display-panel{
+        width: 90%;
+    }
+}
+
+.e-title{
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            background: black;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        /* Styling for paragraph below h1 */
+        .e-description {
+        padding-left: 14%;
+        padding-right: 14%;
+            font-size: 18px;
+            color: #333;
+            
+            line-height: 1.6;
+            margin-bottom: 45px;
+            text-align: center;
+        }
+           
+        
+
+    </style>
+</head>
+<body>
+    <div style="width: 95%;gap: 40px;" >
+        <h1 class="e-title">Health Care Data Platform</h1>
+        <p class="e-description">Our Healthcare Data Platform, built on Microsoft Fabric, is a comprehensive cloud-based data warehouse solution specifically designed for the NHS (National Health Service).</p>
+    
+    <div  class="e-container" >
+        
+    <div class="e-accordion">
+        
+        <div class="e-accordion-item" data-content="
+        <h2>Next-Gen Healthcare <span class='highlight'>Data Platform</span></h2>
+        <p class='content-text'>VIBE is a trailblazing Healthcare Data Platform built on Microsoft Fabric, engineered for seamless data migration, integration, and management. Cloud-native, secure, and scalable, it is designed for seamless NHS (National Health Service) data handling, setting a new benchmark in healthcare data management.</p>
+        
+    ">
+        <div class="e-accordion-header">Next-Gen Healthcare Data Platform <span class="icon">&#9660;</span></div>
+        <div class="e-accordion-content"></div>
+    </div>
+    
+    <div class="e-accordion-item" data-content="
+        <h2>Seamless NHS Integration <span class='highlight'>& Compliance</span></h2>
+        <p class='content-text'>VIBE is a comprehensive, cloud-based data warehouse designed to meet the evolving demands of modern healthcare data ecosystems. It accelerates data flow while ensuring NHS model compliance and integrates with the Organisation Data Set (ODS) for reference data. The platform supports Master Data Management (MDM) and KPI generation, seamlessly integrating with leading Electronic Patient Record (EPR) systems like Cerner, Epic, Lorenzo, and more.</p>
+        
+    ">
+        <div class="e-accordion-header">Seamless NHS Integration & Compliance <span class="icon">&#9660;</span></div>
+        <div class="e-accordion-content"></div>
+    </div>
+    
+    <div class="e-accordion-item" data-content="
+        <h2>Effortless Data Migration <span class='highlight'>& Governance</span></h2>
+        <p class='content-text'>As a versatile data platform, VIBE enables seamless data migration from on-premises servers to a centralized data lake, powered by OneLake architecture. The platform ensures frictionless migration by leveraging the full potential of Microsoft Fabric, supporting advanced ELT (Extract, Load, Transform) processes. With centralized data storage and robust governance, it aligns with healthcare regulations.</p>
+        
+    ">
+        <div class="e-accordion-header">Effortless Data Migration & Governance <span class="icon">&#9660;</span></div>
+        <div class="e-accordion-content"></div>
+    </div>
+    
+    <div class="e-accordion-item" data-content="
+        <h2>Multi-Language Support for <span class='highlight'>Data Processing</span></h2>
+        <p class='content-text'>VIBE offers flexibility by supporting multiple data processing languages for seamless data transformation. The platform supports SQL, Python, and PowerShell, enabling dynamic, code-driven transformations within the data lake. Users can design custom workflows, execute parallel/sequential business logic, and automate complex data processes for optimized performance.</p>
+        
+    ">
+        <div class="e-accordion-header">Multi-Language Support for Data Processing <span class="icon">&#9660;</span></div>
+        <div class="e-accordion-content"></div>
+    </div>
+    
+        <div class="e-accordion-item" data-content="
+    <h2>AI-Driven Data Quality <span class='highlight'> & Governance</span></h2>
+    <p class='content-text'>With advanced data modeling and AI-driven analytics, VIBE ensures data accuracy, compliance, and governance. Automated data quality checks and validation help maintain high standards. It achieves precise data governance by mapping rules and jobs directly to specific data columns. The system streamlines end-to-end data integration, transformation, and management while ensuring data accuracy, consistency, and compliance.</p>
+    
+">
+    <div class="e-accordion-header">
+        AI-Driven Data Quality & Governance <span class="icon">&#9660;</span>
+    </div>
+    <div class="e-accordion-content"></div>
+</div>
+
+    </div>
+    
+    <div class="e-display-panel" id="displayPanel">
+        Click an item to display content here.
+    </div>
+</div>
+</div>
+    
+    
+
+</body>
+<script>
+    const gradients = [
+        "e-gradient-1", "e-gradient-2", "e-gradient-3", "e-gradient-4"
+    ];
+
+    document.querySelectorAll(".e-accordion-item").forEach((item, index) => {
+        item.addEventListener("click", function () {
+            let content = this.querySelector(".e-accordion-content");
+            let isActive = this.classList.contains("active");
+
+            // Remove active class from all items and hide content
+            document.querySelectorAll(".e-accordion-item").forEach((i) => {
+                i.classList.remove("active");
+                let iContent = i.querySelector(".e-accordion-content");
+                if (iContent) {
+                    iContent.classList.remove("active");
+                }
+            });
+
+            // Toggle active state
+            if (!isActive) {
+                this.classList.add("active");
+                if (content) {
+                    content.classList.add("active");
+                }
+            }
+
+            // Update display panel with animated gradient
+            let displayPanel = document.getElementById("displayPanel");
+            if (displayPanel) {
+                displayPanel.innerHTML = this.getAttribute("data-content"); // Set content
+                displayPanel.classList.remove(...gradients); // Remove previous gradients
+                displayPanel.classList.add(gradients[index % gradients.length], "animate-gradient"); // Apply new gradient
+            }
+        });
+    });
+</script>
+
+
+</html>
