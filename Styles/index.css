@@ -3789,26 +3789,46 @@ line-height: 1.6;
 text-align: justify;
 margin-bottom: 20px;
 }
-
-/* Animate the Gradient */
+/* Keyframes for moving the gradient */
 @keyframes moveGradient {
-0% { background-position: 0% 50%; }
-50% { background-position: 100% 50%; }
-100% { background-position: 0% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Common gradient animation */
+.gradient-animation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: 200% 200%;
+  animation: moveGradient 4s ease infinite;
 }
 
 /* Individual gradient styles */
 .ae-gradient-1::before {
-background: linear-gradient(45deg, #267CFC, #FF6B00); /* Blue + Vibrant Orange */
+  background: linear-gradient(45deg, #267CFC, #FF6B00); /* Blue + Vibrant Orange */
 }
+
 .ae-gradient-2::before {
-background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
+  background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
 }
+
 .ae-gradient-3::before {
-background: linear-gradient(45deg, #7D3C98, #0072FF); /* Deep Purple + Rich Blue */
+  background: linear-gradient(45deg, #4c1962, #eb68cc); /* Deep Purple + Rich Blue */
 }
+
 .ae-gradient-4::before {
-background: linear-gradient(45deg, #E91E63, #267CFC); /* Bold Pink + Primary Blue */
+  background: linear-gradient(45deg, #E91E63, #267CFC); /* Bold Pink + Primary Blue */
+}
+
+/* Apply animation to all gradient elements */
+.ae-gradient-1::before,
+.ae-gradient-2::before,
+.ae-gradient-3::before,
+.ae-gradient-4::before {
+  background-size: 200% 200%;
+  animation: moveGradient 4s ease infinite;
 }
 
 @media (max-width: 768px) {
@@ -4040,4 +4060,13 @@ left: 55px;
   .line-error{
       display: none !important;
   }
+}
+
+
+
+.footer-links{
+  color: black;
+}
+.footer-links:hover{
+  color: #267CFC;
 }
