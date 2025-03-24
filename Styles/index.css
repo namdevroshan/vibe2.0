@@ -3885,13 +3885,18 @@ text-align: center;
   }
   .e-display-panel{
   width: 100%;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
   }
   .e-accordion-header {
     font-size: 18px;
     
   }
+  .e-description {
+    padding-left: 2px;
+    padding-right: 2px;
+   text-align: center;
+   }
   }
 
  
