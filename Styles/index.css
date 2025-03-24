@@ -3993,3 +3993,30 @@ text-align: center;
       }
   }
   
+
+
+
+
+
+
+  .connection-line-1{
+    left: 66px; top: 118px; position: absolute
+  }
+  .connection-line-2{
+    left: 66px; top: 314px; position: absolute
+  }
+  .connection-line-3{
+    left: 66px; top: 118px; position: absolute
+  }
+  .connection-line-4{
+    left: 66px; top: 707px; position: absolute
+  }
+
+  @media (max-width: 1024px) {
+    .connection-line-1,
+    .connection-line-2,
+    .connection-line-3,
+    .connection-line-4 {
+        display: none !important;
+    }
+}
