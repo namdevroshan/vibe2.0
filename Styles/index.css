@@ -97,6 +97,7 @@
   }
 }
 
+
 @media (max-width: 991px) {
   .u-section-1 .u-sheet-1 {
     min-height: 824px;
@@ -1517,7 +1518,10 @@
     margin-left: 0;
     margin-right: 0;
   }
-} .u-section-7 {
+} 
+
+
+.u-section-7 {
   min-height: 118px;
 }.u-section-8 .u-sheet-1 {
   min-height: 100vh;

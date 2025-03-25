@@ -83,3 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   
   
+//for 1024responsive
+
+
+
