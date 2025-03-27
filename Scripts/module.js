@@ -48,7 +48,6 @@ document.querySelectorAll(".e-accordion-item").forEach((item) => {
         this.classList.add("active");
     });
 });
-
 document.addEventListener("DOMContentLoaded", function () {
     const accordionItems = document.querySelectorAll(".e-accordion-item");
     const displayPanel = document.querySelector(".e-display-panel");
@@ -64,21 +63,24 @@ document.addEventListener("DOMContentLoaded", function () {
         // Remove highlighted text from cloned panel (for mobile)
         clonedPanel.innerHTML = contentHTML.replace(/<span class=['"]highlight['"]>(.*?)<\/span>/g, "$1");
 
-        // Apply padding to the cloned panel as well
-        clonedPanel.style.padding = "38px 60px";
+        // Apply different padding based on screen size
+        if (window.innerWidth <= 768) {
+            clonedPanel.style.padding = "20px 20px"; // Reduced padding for mobile
+        } else {
+            clonedPanel.style.padding = "38px 60px"; // Default padding for larger screens
+        }
 
         item.after(clonedPanel);
     }
 
     accordionItems.forEach((item) => {
         item.addEventListener("click", function () {
-            if (window.innerWidth <= 768) {
-                const contentHTML = item.dataset.content; // Get accordion content
-                updatePanelPosition(item, contentHTML);
-            }
+            const contentHTML = item.dataset.content; // Get accordion content
+            updatePanelPosition(item, contentHTML);
         });
     });
 });
+
 
 
 
