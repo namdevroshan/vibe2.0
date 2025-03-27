@@ -51537,7 +51537,7 @@
   .u-footer {
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-image: url("images/Frame2.png");
+    background-image: url("/images/Frame2.png");
     background-size: cover;
   }
   
@@ -51664,7 +51664,7 @@
   
   .u-footer .u-btn-1 {
     --radius: 50px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 0.875rem;
     letter-spacing: 1px;
     border-style: solid;

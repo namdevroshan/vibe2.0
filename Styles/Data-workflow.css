@@ -24,25 +24,25 @@
   
   .u-section-1 .u-btn-1 {
     background-image: none;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     --radius: 40px;
     font-weight: 700;
     font-family: Inter;
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 0px 913px 0 auto;
     padding: 11px 19px;
   }
   
   .u-section-1 .u-btn-2 {
     background-image: none;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     --radius: 40px;
     font-weight: 700;
     font-family: Inter;
-    font-size: 1rem;
+    font-size: 1.1rem;
     border-style: solid;
-    margin: -44px 731px 60px auto;
-    padding: 11px 19px;
+    margin: -47px 731px 60px auto;
+    padding: 9px 19px;
   }
   
   @media (max-width: 1199px) {
@@ -2262,6 +2262,12 @@
   color: #333;
   font-weight: bold;
   }
+  .panel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the image fully covers the container */
+    border-radius: 15px; /* Keeps the border effect */
+  }
   
   /* Animated Gradient Border */
   .display-panel::before {
@@ -2890,9 +2896,9 @@
   background-image: url("/images/Frame2.png");
   background-size:cover;
   border-radius: 15px;
-  padding: 38px;
+  /* padding: 38px;
   padding-left: 60px;
-  padding-right: 60px;
+  padding-right: 60px; */
   width: 80%;
   max-width: 900px;
   min-height: 150px;
@@ -3138,3 +3144,190 @@
       }
       
     
+
+
+         
+.navbar {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    padding-left: 50px;padding-right:50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background: transparent;
+    z-index: 1000;
+}
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand-logo img {
+    height: 40px;
+}
+
+.brand-logo2 img {
+    height: 16px;
+}
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 26px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 550;
+    color: white;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links ul li a:hover {
+    color: #267CFC;
+}
+
+.signin-icon {
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.signin-icon:hover {
+    color: var(--primary-color);
+}
+
+.hamburger-menu {
+    margin-bottom: 4px;
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hamburger-menu.active {
+    transform: rotate(90deg);
+}
+
+/* Responsive Styles */
+@media (max-width: 1439px) {
+    .nav-links {
+        padding-right: 222px;
+    }
+    .brand-logo img {
+        height: 32px;
+        margin-top: 10px;
+    }
+    .brand-logo2 img {
+        height: 12px;
+        margin-top: 10px;
+    }
+    .nav-links ul li a {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .nav-links {
+        padding-right: 290px;
+    }
+}
+
+@media (max-width: 1182px) {
+    .nav-links ul li a {
+        font-size: 12px;
+    }
+    .nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+}
+}
+
+
+@media (max-width: 1024px) {
+    .nav-links ul li a {
+        font-size: 9px;
+    }
+    .nav-links ul {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+}
+}
+
+@media (max-width: 900px) {
+    .navbar{
+        
+        padding-left: 0px;
+        padding-right:0px;
+    }
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: var(--shadow);
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease-in-out;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+    }
+    .nav-links ul li a {
+        color: #000000;
+    }
+    .hamburger-menu {
+        display: block;
+        color: white;
+    }
+
+    .brand-logo img {
+        height: 40px;
+    }
+
+    .brand-logo2 img {
+        height: 12px;
+        margin-bottom: 2px;
+    }
+
+    .brand-container {
+        gap: 5px;
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}

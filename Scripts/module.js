@@ -30,6 +30,9 @@ document.querySelectorAll(".e-accordion-item").forEach((item, index) => {
             displayPanel.innerHTML = this.getAttribute("data-content"); // Fixed attribute name
             displayPanel.classList.remove(...gradients);
             displayPanel.classList.add(gradients[index % gradients.length]);
+
+            // Apply the required padding when an item is clicked
+            displayPanel.style.padding = "38px 60px";
         }
     });
 });
@@ -46,44 +49,82 @@ document.querySelectorAll(".e-accordion-item").forEach((item) => {
     });
 });
 
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const accordionItems = document.querySelectorAll(".e-accordion-item");
     const displayPanel = document.querySelector(".e-display-panel");
-  
+
     function updatePanelPosition(item, contentHTML) {
-      // Remove existing panels
-      document.querySelectorAll(".e-display-panel").forEach(panel => panel.remove());
-  
-      // Clone display panel and insert below the clicked item
-      const clonedPanel = displayPanel.cloneNode(true);
-      clonedPanel.style.display = "block";
-  
-      // Remove highlighted text from cloned panel (for mobile)
-      clonedPanel.innerHTML = contentHTML.replace(/<span class=['"]highlight['"]>(.*?)<\/span>/g, "$1");
-  
-      item.after(clonedPanel);
+        // Remove existing panels
+        document.querySelectorAll(".e-display-panel").forEach(panel => panel.remove());
+
+        // Clone display panel and insert below the clicked item
+        const clonedPanel = displayPanel.cloneNode(true);
+        clonedPanel.style.display = "block";
+
+        // Remove highlighted text from cloned panel (for mobile)
+        clonedPanel.innerHTML = contentHTML.replace(/<span class=['"]highlight['"]>(.*?)<\/span>/g, "$1");
+
+        // Apply padding to the cloned panel as well
+        clonedPanel.style.padding = "38px 60px";
+
+        item.after(clonedPanel);
     }
-  
+
     accordionItems.forEach((item) => {
-      item.addEventListener("click", function () {
-        if (window.innerWidth <= 768) {
-          const contentHTML = item.dataset.content; // Get accordion content
-          updatePanelPosition(item, contentHTML);
-        }
-      });
+        item.addEventListener("click", function () {
+            if (window.innerWidth <= 768) {
+                const contentHTML = item.dataset.content; // Get accordion content
+                updatePanelPosition(item, contentHTML);
+            }
+        });
     });
-  });
-  
-  
-  
-//for 1024responsive
+});
 
 
 
+
+
+
+
+const menuToggle = document.querySelector('.hamburger-menu');
+        const nav = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuToggle.textContent = nav.classList.contains('active') ? '✖' : '☰';
+        });
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // List of different links for each .u-list-item
+            const links = [
+                "/Modules/Data-extract.html",
+                "/Modules/Data-transform.html",
+                "/Modules/Data-model.html",
+                "/Modules/Data-workflow.html",
+                "/Modules/Master-date.html"
+            ];
+        
+            // Select all .u-list-item elements
+            const listItems = document.querySelectorAll(".u-section-13 .u-list-item");
+        
+            // Loop through each .u-list-item and add the link after <p>
+            listItems.forEach((item, index) => {
+                const paragraph = item.querySelector("p"); // Find the <p> inside the list item
+                if (paragraph) {
+                    const link = document.createElement("a"); // Create new <a> element
+                    link.href = links[index % links.length]; // Assign a different link from the array
+                    link.textContent = " Read More"; // Text for the link
+                    link.style.color = "#57AEFF"; // Link color
+                    link.style.fontWeight = "bold"; // Make it bold
+                    link.style.textDecoration = "none"; // Remove underline
+        
+                    paragraph.appendChild(link); // Append the link inside the paragraph
+                }
+            });
+        });
+        
+          
