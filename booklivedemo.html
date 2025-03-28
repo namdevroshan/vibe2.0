@@ -50,6 +50,7 @@
         <script class="u-script" type="text/javascript" src="/Scripts/jquery.js" defer=""></script>
         <script class="u-script" type="text/javascript" src="/Scripts/nicepage.js" defer=""></script>
         <script class="u-script" type="text/javascript" src="/Scripts/module.js" defer=""></script>
+        
     
         <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
         <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Inter:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
@@ -60,6 +61,246 @@
             "logo": "images/Group1000001139.png",
             "sameAs": []
     }</script>
+    <style>
+      /* Base hidden state for animations */
+      .animated-text {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+        transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+      }
+    
+      /* Show state for animation */
+      .animated-text.show {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      /* Container for the carousel */
+      .logo-carousel {
+    /* overflow: hidden; */
+    position: relative;
+    width: 100%;
+    height: auto; /* Adjust based on logo height */
+    margin: 69px;
+    white-space: nowrap;
+  }
+  
+  /* Track that holds the logos */
+  .logo-track {
+    display: flex;
+    width: max-content; /* Automatically expands based on content */
+    animation: scroll 20s linear infinite;
+  }
+  
+  /* Individual logo items */
+  .logo-item {
+    flex: 0 0 auto;
+    width: 200px; /* Adjust based on logo width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px; /* Optional spacing */
+  }
+  
+  /* Logos */
+  .logo-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Animation for continuous scrolling */
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  
+  .active-item {
+    color: #267CFC !important;
+    /* font-weight: bold; */
+  }
+  
+  
+  .navbar {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 15px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      background: transparent;
+      z-index: 1000;
+  }
+  
+  .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+  }
+  
+  .brand-logo img {
+      height: 40px;
+  }
+  
+  .brand-logo2 img {
+      height: 16px;
+  }
+  
+  .nav-links {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .nav-links ul {
+      list-style: none;
+      display: flex;
+      gap: 26px;
+  }
+  
+  .nav-links ul li a {
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 550;
+      color: var(--text-secondary-color);
+      transition: color 0.3s ease-in-out;
+  }
+  
+  .nav-links ul li a:hover {
+      color: #267CFC;
+  }
+  
+  .signin-icon {
+      font-size: 20px;
+      color: var(--text-secondary-color);
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+  }
+  
+  .signin-icon:hover {
+      color: var(--primary-color);
+  }
+  
+  .hamburger-menu {
+      margin-bottom: 4px;
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+  }
+  
+  .hamburger-menu.active {
+      transform: rotate(90deg);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1439px) {
+      .nav-links {
+          padding-right: 222px;
+      }
+      .brand-logo img {
+          height: 32px;
+          margin-top: 10px;
+      }
+      .brand-logo2 img {
+          height: 12px;
+          margin-top: 10px;
+      }
+      .nav-links ul li a {
+          font-size: 14px;
+      }
+  }
+  
+  @media (min-width: 1440px) {
+      .nav-links {
+          padding-right: 290px;
+      }
+  }
+  
+  @media (max-width: 1182px) {
+      .nav-links ul li a {
+          font-size: 12px;
+      }
+      .nav-links ul {
+      list-style: none;
+      display: flex;
+      gap: 16px;
+  }
+  }
+  
+  
+  @media (max-width: 1024px) {
+      .nav-links ul li a {
+          font-size: 9px;
+      }
+      .nav-links ul {
+      list-style: none;
+      display: flex;
+      gap: 12px;
+  }
+  }
+  
+  @media (max-width: 900px) {
+      .nav-links {
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 100%;
+          background: white;
+          box-shadow: var(--shadow);
+          display: none;
+          flex-direction: column;
+          text-align: center;
+          padding: 15px 0;
+      }
+  
+      .nav-links.active {
+          display: flex;
+          animation: slideDown 0.3s ease-in-out;
+      }
+  
+      .nav-links ul {
+          flex-direction: column;
+          gap: 15px;
+          padding: 10px 0;
+      }
+  
+      .hamburger-menu {
+          display: block;
+      }
+  
+      .brand-logo img {
+          height: 30px;
+      }
+  
+      .brand-logo2 img {
+          height: 11px;
+          margin-bottom: 3px;
+      }
+  
+      .brand-container {
+          gap: 5px;
+      }
+  
+      @keyframes slideDown {
+          from {
+              transform: translateY(-20px);
+              opacity: 0;
+          }
+          to {
+              transform: translateY(0);
+              opacity: 1;
+          }
+      }
+  }
+  
+    </style>
     <style>
       .custom-container {
     max-width: 1600px;
@@ -139,7 +380,7 @@ h4 {
 }
 
 .submit-button {
-    background: linear-gradient(90deg, #E695CD, #A474E8, #65B3E1);
+    background: #312f76;
     color: white;
     padding: 12px;
     font-size: 16px;
@@ -176,56 +417,35 @@ h4 {
     </style>
   </head>
   <body data-home-page="Page-8.html" data-home-page-title="Page 8" data-path-to-root="./" data-include-products="false" class="u-body u-overlap u-overlap-transparent u-xl-mode" data-lang="en">
-    <header class="u-clearfix u-header  u-header" id="header"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="#" class="u-enable-responsive u-image u-logo u-image-1" data-image-width="202" data-image-height="47">
-          <img src="/images/saa-black-logo.svg" class="u-logo-image u-logo-image-1">
-        </a>
-        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-          <div class="menu-collapse u-custom-font" style="font-size: 0.9375rem; letter-spacing: 0px; font-family: Inter; font-weight: 600;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-    </g></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-custom-font u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-23 u-text-body-color u-text-hover-custom-color-22" href="Modules/Data-extract.html" style="padding: 10px 13px;">Data Extract</a>
-    </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-23 u-text-body-color u-text-hover-custom-color-22" href="Modules/Data-transform.html" style="padding: 10px 13px;">Data Transform</a>
-    </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-23 u-text-body-color u-text-hover-custom-color-22" href="Modules/Data-model.html" style="padding: 10px 13px;">Data Model</a>
-    </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-23 u-text-body-color u-text-hover-custom-color-22" href="Modules/Data-workflow.html" style="padding: 10px 13px;">Data Workflow</a>
-    </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-23 u-text-body-color u-text-hover-custom-color-22" href="Modules/Master-date.html" style="padding: 10px 13px;">Master Data</a>
-    </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-23 u-text-body-color u-text-hover-custom-color-22" style="padding: 10px 13px;">Contact us</a>
-    </li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Modules/Data-extract.html">Data Extract</a>
-    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Modules/Data-transform.html">Data Transform</a>
-    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Modules/Data-model.html">Data Model</a>
-    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Modules/Data-workflow.html">Data Workflow</a>
-    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Modules/Master-date.html">Master Data</a>
-    </li><li class="u-nav-item"><a class="u-button-style u-nav-link">Contact us</a>
-    </li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-        
-        <img class="u-enable-responsive u-image u-image-contain u-image-default u-preserve-proportions u-image-2" src="images/vibe-black-logo.svg" alt="" data-image-width="90" data-image-height="37">
-        <span class="u-enable-responsive u-file-icon u-icon u-icon-1"><img src="/images/456212.png" alt=""></span>
-      </div></header>
+    <header class="navbar" style="padding-left: 50px;padding-right:50px;">
+      <div class="brand-container">
+          <div class="brand-logo"><img src="./images/second-updated-saa-blacklogo2.svg" alt="Logo 1"></div>
+          <div class="brand-logo2"><img src="./images/VIBE.svg" alt="Logo 2"></div>
+      </div>
+      <div class="hamburger-menu">☰</div>
+      <nav class="nav-links">
+          <ul>
+              <li><a href="index.html">About VIBE</a></li>
+              <li><a href="Modules/Data-extract.html">Extract</a></li>
+              <li><a href="Modules/Data-transform.html">Transform</a></li>
+              <li><a href="Modules/Data-model.html">Model</a></li>
+              <li><a href="Modules/Data-workflow.html">Workflow</a></li>
+              <li><a href="Modules/Master-date.html">Master Data</a></li>
+              <li><a href="#">Contact Us</a></li>
+              
+          </ul>
+      </nav>
+      <a href="#" class="signin-icon"><i class="fas fa-user"></i></a>
+  </header>
       <div style="height: 156px;"></div>
     <div class="custom-container d-flex flex-wrap">
       <!-- Left Side (Information) -->
-      <div class="col-md-7 info-section" style="margin-top: -10px">
+      <div class="col-md-7 info-section" style="margin-top: -5px">
         <div class="logo-box">
           
-          <p class="main-heading" style="color: #267cfc; margin-top: 28px">
-            The Future of Healthcare Data Management
-          </p>
+          <p1 class="main-heading" style="color: #000000; margin-top: 28px;font-size: 40px;font-weight: 600;">
+            The Future of <span style="color: #267CFC;"> Healthcare Data Management</span>
+          </p1>
         </div>
         <h4 style="color: #267cfc">See it in Action!</h4>
         <ul class="info-list" style="padding-right: 80px">
@@ -377,133 +597,119 @@ h4 {
       </div>
     </div>
     <div style="height: 156px;"></div>
-    <footer class="u-align-center-sm u-align-center-xs u-clearfix u-footer u-image u-footer" id="footer" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" data-image-width="1440" data-image-height="947"><div class="u-clearfix u-sheet u-valign-middle-sm u-sheet-1">
-        <a href="#" class="u-image u-logo u-image-1" data-image-width="312" data-image-height="47">
-          <img src="images/Header-logo.svg" class="u-logo-image u-logo-image-1">
-        </a>
-        <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
-          <div class="u-gutter-0 u-layout">
-            <div class="u-layout-row">
-              <div class="u-align-left u-container-align-left-lg u-container-align-left-xl u-container-style u-layout-cell u-shape-rectangle u-size-12 u-size-30-md u-layout-cell-1">
-                <div class="u-container-layout u-valign-top u-container-layout-1"><!--position-->
-                  <div data-position="" class="u-position u-position-1"><!--block-->
-                    <div class="u-block">
-                      <div class="u-block-container u-clearfix"><!--block_header-->
-                        <h5 class="u-align-center-md u-align-center-sm u-align-center-xs u-block-header u-custom-font u-text u-text-1"><!--block_header_content--> WHY VIBE<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
-                        <div class="u-align-center-md u-align-center-sm u-align-center-xs u-block-content u-text"><!--block_content_content-->
-                          <br>Company<br>
-                          <br>Success Stories<br>
-                          <br>Resources<br>
-                          <br>Careers<!--/block_content_content-->
-                        </div><!--/block_content-->
-                      </div>
-                    </div><!--/block-->
-                  </div><!--/position-->
-                </div>
+    <footer class="u-align-center-sm u-align-center-xs u-clearfix u-footer u-image u-footer" id="footer" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" data-image-width="1440" data-image-height="947" style="background-color: #1e293b;"><div class="u-clearfix u-sheet u-valign-middle-sm u-sheet-1">
+      <a href="#" class="u-image u-logo u-image-1" data-image-width="312" data-image-height="47">
+        <img src="images/vibe-footer-whitelogo.svg" class="u-logo-image u-logo-image-1">
+      </a>
+      <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+        <div class="u-gutter-0 u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-left u-container-align-left-lg u-container-align-left-xl u-container-style u-layout-cell u-shape-rectangle u-size-12 u-size-30-md u-layout-cell-1">
+              <div class="u-container-layout u-valign-top u-container-layout-1"><!--position-->
+                <div data-position="" class="u-position u-position-1"><!--block-->
+                  <div class="u-block">
+                    <div class="u-block-container u-clearfix"><!--block_header-->
+                      <h5 class="u-align-center-md u-align-center-sm u-align-center-xs u-block-header u-custom-font u-text u-text-1" style="color: #65B3E1;"><!--block_header_content--> WHY VIBE<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                      <div class="u-align-center-md u-align-center-sm u-align-center-xs u-block-content u-text"><!--block_content_content-->
+                       <a href="https://www.saa.ai/company.php" class="footer-links"> <br>Company<br></a>
+                       <a href="https://www.saa.ai/index.php#success-stories" class="footer-links"><br>Success Stories<br></a>
+                        <a href="https://www.saa.ai/resource_pool.php" class="footer-links"><br>Resources<br></a>
+                        <a href="https://www.saa.ai/careers.php" class="footer-links"><br>Careers<!--/block_content_content--></a>
+                      </div><!--/block_content-->
+                    </div>
+                  </div><!--/block-->
+                </div><!--/position-->
               </div>
-              <div class="u-align-left u-container-align-left-lg u-container-align-left-xl u-container-style u-layout-cell u-shape-rectangle u-size-12 u-size-30-md u-layout-cell-2">
-                <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-2"><!--position-->
-                  <div data-position="" class="u-position u-position-2"><!--block-->
-                    <div class="u-block">
-                      <div class="u-block-container u-clearfix"><!--block_header-->
-                        <h5 class="u-align-center-xs u-block-header u-custom-font u-text u-text-3"><!--block_header_content--> INDUSTRIES<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
-                        <div class="u-align-center-md u-align-center-sm u-align-center-xs u-block-content u-text"><!--block_content_content-->
-                          <br>Banking &amp; Finance<br>
-                          <br>Healthcare<br>
-                          <br>Retail<br>
-                          <br>Social &amp; Crime<!--/block_content_content-->
-                        </div><!--/block_content-->
-                      </div>
-                    </div><!--/block-->
-                  </div><!--/position-->
-                </div>
+            </div>
+            <div class="u-align-left u-container-align-left-lg u-container-align-left-xl u-container-style u-layout-cell u-shape-rectangle u-size-12 u-size-30-md u-layout-cell-2">
+              <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-2"><!--position-->
+                <div data-position="" class="u-position u-position-2"><!--block-->
+                  <div class="u-block">
+                    <div class="u-block-container u-clearfix"><!--block_header-->
+                      <h5 class="u-align-center-xs u-block-header u-custom-font u-text u-text-3" style="color: #65B3E1;"><!--block_header_content--> INDUSTRIES<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                      <div class="u-align-center-md u-align-center-sm u-align-center-xs u-block-content u-text"><!--block_content_content-->
+                        <a href="https://www.saa.ai/Finance.php" class="footer-links"><br>Banking &amp; Finance<br></a>
+                        <a href="https://www.saa.ai/HealthCare.php" class="footer-links"><br>Healthcare<br></a>
+                        <a href="https://www.saa.ai/Retail.php" class="footer-links"><br>Retail<br></a>
+                        <a href="https://www.saa.ai/Social.php" class="footer-links"><br>Social &amp; Crime<!--/block_content_content--></a>
+                      </div><!--/block_content-->
+                    </div>
+                  </div><!--/block-->
+                </div><!--/position-->
               </div>
-              <div class="u-align-left u-container-align-left-lg u-container-align-left-xl u-container-style u-layout-cell u-shape-rectangle u-size-12 u-size-30-md u-layout-cell-3">
-                <div class="u-container-layout u-valign-top u-container-layout-3"><!--position-->
-                  <div data-position="" class="u-position u-position-3"><!--block-->
-                    <div class="u-block">
-                      <div class="u-block-container u-clearfix"><!--block_header-->
-                        <h5 class="u-align-center-md u-align-center-sm u-align-center-xs u-block-header u-custom-font u-text u-text-5"><!--block_header_content--> SOLUTION<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
-                        <div class="u-align-center-md u-align-center-sm u-align-center-xs u-block-content u-text"><!--block_content_content-->
-                          <br>Data Streaming<br>
-                          <br>Data Lineage<br>
-                          <br>Data Warehousing<br>
-                          <br>Data Migration<!--/block_content_content-->
-                        </div><!--/block_content-->
-                      </div>
-                    </div><!--/block-->
-                  </div><!--/position-->
-                </div>
+            </div>
+            <div class="u-align-left u-container-align-left-lg u-container-align-left-xl u-container-style u-layout-cell u-shape-rectangle u-size-12 u-size-30-md u-layout-cell-3">
+              <div class="u-container-layout u-valign-top u-container-layout-3"><!--position-->
+                <div data-position="" class="u-position u-position-3"><!--block-->
+                  <div class="u-block">
+                    <div class="u-block-container u-clearfix"><!--block_header-->
+                      <h5 class="u-align-center-md u-align-center-sm u-align-center-xs u-block-header u-custom-font u-text u-text-5" style="color: #65B3E1;"><!--block_header_content--> SOLUTION<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                      <div class="u-align-center-md u-align-center-sm u-align-center-xs u-block-content u-text"><!--block_content_content-->
+                        <a href="https://www.saa.ai/data-streaming.php" class="footer-links"><br>Data Streaming<br></a>
+                        <a href="https://www.saa.ai/data-lineage.php" class="footer-links"><br>Data Lineage<br></a>
+                        <a href="https://www.saa.ai/data-warehouse-automation.php" class="footer-links"><br>Data Warehousing<br></a>
+                        <a href="https://www.saa.ai/data-migration.php" class="footer-links"><br>Data Migration<!--/block_content_content--></a>
+                      </div><!--/block_content-->
+                    </div>
+                  </div><!--/block-->
+                </div><!--/position-->
               </div>
-              <div class="u-align-left u-container-align-left-lg u-container-align-left-xl u-container-style u-layout-cell u-shape-rectangle u-size-12 u-size-30-md u-layout-cell-4">
-                <div class="u-container-layout u-valign-top u-container-layout-4"><!--position-->
-                  <div data-position="" class="u-position u-position-4"><!--block-->
-                    <div class="u-block">
-                      <div class="u-block-container u-clearfix"><!--block_header-->
-                        <h5 class="u-align-center-md u-align-center-sm u-align-center-xs u-block-header u-custom-font u-text u-text-7"><!--block_header_content--> INSIGHTS<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
-                        <div class="u-align-center-md u-align-center-sm u-align-center-xs u-block-content u-text"><!--block_content_content-->
-                          <br>AI &amp; ML<br>
-                          <br>Visualization<br>
-                          <br>Embedded Analytics<br>
-                          <br>Data Monitoring<!--/block_content_content-->
-                        </div><!--/block_content-->
-                      </div>
-                    </div><!--/block-->
-                  </div><!--/position-->
-                </div>
+            </div>
+            <div class="u-align-left u-container-align-left-lg u-container-align-left-xl u-container-style u-layout-cell u-shape-rectangle u-size-12 u-size-30-md u-layout-cell-4">
+              <div class="u-container-layout u-valign-top u-container-layout-4"><!--position-->
+                <div data-position="" class="u-position u-position-4"><!--block-->
+                  <div class="u-block">
+                    <div class="u-block-container u-clearfix"><!--block_header-->
+                      <h5 class="u-align-center-md u-align-center-sm u-align-center-xs u-block-header u-custom-font u-text u-text-7" style="color: #65B3E1;"><!--block_header_content--> INSIGHTS<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                      <div class="u-align-center-md u-align-center-sm u-align-center-xs u-block-content u-text"><!--block_content_content-->
+                        <a href="https://www.saa.ai/ai-and-machine-learning.php" class="footer-links"><br>AI &amp; ML<br></a>
+                        <a href="https://www.saa.ai/visualizations-and-dashboards.php" class="footer-links"><br>Visualization<br></a>
+                        <a href="https://www.saa.ai/embedded-analytics.php" class="footer-links"><br>Embedded Analytics<br></a>
+                        <a href="https://www.saa.ai/data-monitoring-and-action.php" class="footer-links"><br>Data Monitoring<!--/block_content_content--></a>
+                      </div><!--/block_content-->
+                    </div>
+                  </div><!--/block-->
+                </div><!--/position-->
               </div>
-              <div class="u-align-left u-container-style u-layout-cell u-shape-rectangle u-size-12 u-size-60-md u-layout-cell-5">
-                <div class="u-container-layout u-container-layout-5"><!--position-->
-                  <div data-position="" class="u-position u-position-5"><!--block-->
-                    <div class="u-block">
-                      <div class="u-block-container u-clearfix"><!--block_header-->
-                        <h5 class="u-align-center-xs u-block-header u-custom-font u-text u-text-9"><!--block_header_content--> &nbsp; &nbsp; &nbsp;CONTACT<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
-                        <div class="u-align-center-xs u-block-content u-text"><!--block_content_content--><!--/block_content_content--></div><!--/block_content-->
-                      </div>
-                    </div><!--/block-->
-                  </div><!--/position-->
-                  <div class="u-social-icons u-spacing-20 u-social-icons-1">
-                    <a class="u-social-url" title="facebook" target="_blank" href="">
-                      <span class="u-icon u-social-facebook u-social-icon u-text-custom-color-8"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-fd9f"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-fd9f"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
-      c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path></svg></span>
-                    </a>
-                    <a class="u-social-url" title="instagram" target="_blank" href="">
-                      <span class="u-icon u-social-icon u-social-instagram u-text-custom-color-8"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-a30d"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-a30d"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
-      z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z"></path><path fill="#FFFFFF" d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"></path><path fill="#FFFFFF" d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
-      C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
-      c5.5,0,9.9,4.5,9.9,9.9V73.3z"></path></svg></span>
-                    </a>
-                    <a class="u-social-url" title="linkedin" target="_blank" href="">
-                      <span class="u-icon u-social-icon u-social-linkedin u-text-custom-color-8"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-1f4b"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-1f4b"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M41.3,83.7H27.9V43.4h13.4V83.7z M34.6,37.9L34.6,37.9c-4.6,0-7.5-3.1-7.5-7c0-4,3-7,7.6-7s7.4,3,7.5,7
-      C42.2,34.8,39.2,37.9,34.6,37.9z M89.6,83.7H76.2V62.2c0-5.4-1.9-9.1-6.8-9.1c-3.7,0-5.9,2.5-6.9,4.9c-0.4,0.9-0.4,2.1-0.4,3.3v22.5
-      H48.7c0,0,0.2-36.5,0-40.3h13.4v5.7c1.8-2.7,5-6.7,12.1-6.7c8.8,0,15.4,5.8,15.4,18.1V83.7z"></path></svg></span>
-                    </a>
-                  </div>
-                  <a href="" class="u-border-2 u-border-custom-color-8 u-btn u-btn-round u-button-style u-custom-font u-none u-radius u-btn-1">Contact us </a>
+            </div>
+            <div class="u-align-left u-container-style u-layout-cell u-shape-rectangle u-size-12 u-size-60-md u-layout-cell-5">
+              <div class="u-container-layout u-container-layout-5"><!--position-->
+                <div data-position="" class="u-position u-position-5"><!--block-->
+                  <div class="u-block">
+                    <div class="u-block-container u-clearfix"><!--block_header-->
+                      <h5 class="u-align-center-xs u-block-header u-custom-font u-text u-text-9" style="color: #65B3E1;"><!--block_header_content--> &nbsp; &nbsp; &nbsp;CONTACT<!--/block_header_content--></h5><!--/block_header--><!--block_content-->
+                      <div class="u-align-center-xs u-block-content u-text"><!--block_content_content--><!--/block_content_content--></div><!--/block_content-->
+                    </div>
+                  </div><!--/block-->
+                </div><!--/position-->
+                <div class="u-social-icons u-spacing-20 u-social-icons-1">
+                  <a class="u-social-url" title="facebook" target="_blank" href="https://www.facebook.com/people/Saa-Consultancy/100063931778063/">
+                    <span class="u-icon u-social-facebook u-social-icon u-text-custom-color-8"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-fd9f"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-fd9f"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
+    c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path></svg></span>
+                  </a>
+                  <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/saa_consultancy/">
+                    <span class="u-icon u-social-icon u-social-instagram u-text-custom-color-8"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-a30d"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-a30d"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
+    z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z"></path><path fill="#FFFFFF" d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"></path><path fill="#FFFFFF" d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
+    C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
+    c5.5,0,9.9,4.5,9.9,9.9V73.3z"></path></svg></span>
+                  </a>
+                  <a class="u-social-url" title="linkedin" target="_blank" href="https://www.linkedin.com/company/saa-consultancy">
+                    <span class="u-icon u-social-icon u-social-linkedin u-text-custom-color-8"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-1f4b"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-1f4b"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M41.3,83.7H27.9V43.4h13.4V83.7z M34.6,37.9L34.6,37.9c-4.6,0-7.5-3.1-7.5-7c0-4,3-7,7.6-7s7.4,3,7.5,7
+    C42.2,34.8,39.2,37.9,34.6,37.9z M89.6,83.7H76.2V62.2c0-5.4-1.9-9.1-6.8-9.1c-3.7,0-5.9,2.5-6.9,4.9c-0.4,0.9-0.4,2.1-0.4,3.3v22.5
+    H48.7c0,0,0.2-36.5,0-40.3h13.4v5.7c1.8-2.7,5-6.7,12.1-6.7c8.8,0,15.4,5.8,15.4,18.1V83.7z"></path></svg></span>
+                  </a>
                 </div>
+                <a href="" class="u-border-2 u-border-custom-color-8 u-btn u-btn-round u-button-style u-custom-font u-none u-radius u-btn-1" style="border-color: white; color: white;">Contact us </a>
               </div>
             </div>
           </div>
         </div>
-        <div class="u-social-icons u-spacing-20 u-social-icons-2">
-          <a class="u-social-url" title="facebook" target="_blank" href="">
-            <span class="u-icon u-social-facebook u-social-icon u-text-custom-color-8"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-567e"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-567e"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M73.5,31.6h-9.1c-1.4,0-3.6,0.8-3.6,3.9v8.5h12.6L72,58.3H60.8v40.8H43.9V58.3h-8V43.9h8v-9.2
-      c0-6.7,3.1-17,17-17h12.5v13.9H73.5z"></path></svg></span>
-          </a>
-          <a class="u-social-url" title="instagram" target="_blank" href="">
-            <span class="u-icon u-social-icon u-social-instagram u-text-custom-color-8"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-3111"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-3111"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
-      z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z"></path><path fill="#FFFFFF" d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"></path><path fill="#FFFFFF" d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
-      C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
-      c5.5,0,9.9,4.5,9.9,9.9V73.3z"></path></svg></span>
-          </a>
-          <a class="u-social-url" title="linkedin" target="_blank" href="">
-            <span class="u-icon u-social-icon u-social-linkedin u-text-custom-color-8"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xlink:href="#svg-a14d"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-a14d"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M41.3,83.7H27.9V43.4h13.4V83.7z M34.6,37.9L34.6,37.9c-4.6,0-7.5-3.1-7.5-7c0-4,3-7,7.6-7s7.4,3,7.5,7
-      C42.2,34.8,39.2,37.9,34.6,37.9z M89.6,83.7H76.2V62.2c0-5.4-1.9-9.1-6.8-9.1c-3.7,0-5.9,2.5-6.9,4.9c-0.4,0.9-0.4,2.1-0.4,3.3v22.5
-      H48.7c0,0,0.2-36.5,0-40.3h13.4v5.7c1.8-2.7,5-6.7,12.1-6.7c8.8,0,15.4,5.8,15.4,18.1V83.7z"></path></svg></span>
-          </a>
-        </div>
-        <p class="u-custom-font u-text u-text-default u-text-11">© 2025 SAA Consultancy. All rights Reserved.</p>
-      </div></footer>
+      </div>
+      <div class="u-social-icons u-spacing-20 u-social-icons-2">
+        
+      </div>
+      <p class="u-custom-font u-text u-text-default u-text-11" style="color: white;">© 2025 SAA Consultancy. All rights Reserved.</p>
+    </div></footer>
     
 
     <!-- Success Alert Popup Starts -->

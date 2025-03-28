@@ -1,5 +1,4 @@
 const gradients = ["ae-gradient-1", "ae-gradient-2", "ae-gradient-3", "ae-gradient-4"];
-
 document.querySelectorAll(".e-accordion-item").forEach((item, index) => {
     item.addEventListener("click", function () {
         let content = this.querySelector(".e-accordion-content");
@@ -10,8 +9,7 @@ document.querySelectorAll(".e-accordion-item").forEach((item, index) => {
             i.classList.remove("active");
             let iContent = i.querySelector(".e-accordion-content");
             if (iContent) {
-                iContent.classList.remove("active");
-                iContent.classList.remove("slide-right");
+                iContent.classList.remove("active", "slide-right");
             }
         });
 
@@ -19,20 +17,33 @@ document.querySelectorAll(".e-accordion-item").forEach((item, index) => {
         if (!isActive) {
             this.classList.add("active");
             if (content) {
-                content.classList.add("active");
-                content.classList.add("slide-right");
+                content.classList.add("active", "slide-right");
             }
         }
 
         // Update display panel
         let displayPanel = document.getElementById("displayPanel");
         if (displayPanel) {
-            displayPanel.innerHTML = this.getAttribute("data-content"); // Fixed attribute name
-            displayPanel.classList.remove(...gradients);
-            displayPanel.classList.add(gradients[index % gradients.length]);
+            let dataContent = this.getAttribute("data-content") || "No content available";
+            displayPanel.innerHTML = dataContent;
 
-            // Apply the required padding when an item is clicked
-            displayPanel.style.padding = "38px 60px";
+            // Ensure gradients array exists before using it
+            if (typeof gradients !== "undefined" && gradients.length > 0) {
+                displayPanel.classList.remove(...gradients);
+                displayPanel.classList.add(gradients[index % gradients.length]);
+            }
+
+            // Apply padding based on screen size
+            let screenWidth = parseInt(window.innerWidth, 10);
+            if (screenWidth <= 768) { 
+                displayPanel.style.padding = "2px 3px";  // Adjusted mobile padding
+            } else {
+                displayPanel.style.padding = "38px 60px";  // Default padding for larger screens
+            }
+
+            // Debugging logs (Remove these after testing)
+            console.log("Screen Width:", screenWidth);
+            console.log("Applied Padding:", displayPanel.style.padding);
         }
     });
 });
@@ -48,6 +59,7 @@ document.querySelectorAll(".e-accordion-item").forEach((item) => {
         this.classList.add("active");
     });
 });
+
 document.addEventListener("DOMContentLoaded", function () {
     const accordionItems = document.querySelectorAll(".e-accordion-item");
     const displayPanel = document.querySelector(".e-display-panel");
@@ -63,24 +75,21 @@ document.addEventListener("DOMContentLoaded", function () {
         // Remove highlighted text from cloned panel (for mobile)
         clonedPanel.innerHTML = contentHTML.replace(/<span class=['"]highlight['"]>(.*?)<\/span>/g, "$1");
 
-        // Apply different padding based on screen size
-        if (window.innerWidth <= 768) {
-            clonedPanel.style.padding = "20px 20px"; // Reduced padding for mobile
-        } else {
-            clonedPanel.style.padding = "38px 60px"; // Default padding for larger screens
-        }
+        // Apply padding to the cloned panel as well
+        clonedPanel.style.padding = "38px 60px";
 
         item.after(clonedPanel);
     }
 
     accordionItems.forEach((item) => {
         item.addEventListener("click", function () {
-            const contentHTML = item.dataset.content; // Get accordion content
-            updatePanelPosition(item, contentHTML);
+            if (window.innerWidth <= 768) {
+                const contentHTML = item.dataset.content; // Get accordion content
+                updatePanelPosition(item, contentHTML);
+            }
         });
     });
 });
-
 
 
 
@@ -111,7 +120,7 @@ const menuToggle = document.querySelector('.hamburger-menu');
             ];
         
             // Select all .u-list-item elements
-            const listItems = document.querySelectorAll(".u-section-13 .u-list-item");
+            const listItems = document.querySelectorAll(".u-section-8 .u-list-item");
         
             // Loop through each .u-list-item and add the link after <p>
             listItems.forEach((item, index) => {
@@ -119,7 +128,7 @@ const menuToggle = document.querySelector('.hamburger-menu');
                 if (paragraph) {
                     const link = document.createElement("a"); // Create new <a> element
                     link.href = links[index % links.length]; // Assign a different link from the array
-                    link.textContent = " Read More"; // Text for the link
+                    link.textContent = " Know More"; // Text for the link
                     link.style.color = "#57AEFF"; // Link color
                     link.style.fontWeight = "bold"; // Make it bold
                     link.style.textDecoration = "none"; // Remove underline
@@ -130,3 +139,13 @@ const menuToggle = document.querySelector('.hamburger-menu');
         });
         
           
+
+
+
+
+
+
+
+
+
+        
