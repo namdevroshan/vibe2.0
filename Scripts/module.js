@@ -1,4 +1,4 @@
-const gradients = ["ae-gradient-1", "ae-gradient-2", "ae-gradient-3", "ae-gradient-4"];
+const gradients = ["ae-gradient-1", "ae-gradient-2", "ae-gradient-3", "ae-gradient-4" ,"ae-gradient-5" ,"ae-gradient-6"];
 document.querySelectorAll(".e-accordion-item").forEach((item, index) => {
     item.addEventListener("click", function () {
         let content = this.querySelector(".e-accordion-content");

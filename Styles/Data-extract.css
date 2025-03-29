@@ -2895,7 +2895,7 @@
   position: relative;
   
   background-repeat: no-repeat;
-  background-image: url("/images/Frame2.png");
+  background-image: url("/images/Group\ 15.svg");
   background-size:cover;
   border-radius: 15px;
   /* padding: 38px;
@@ -2910,84 +2910,91 @@
   font-weight: bold;
   }
   
-  /* Animated Gradient Border */
-  .e-display-panel::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  right: -20px;
-  bottom: -20px;
-  background: linear-gradient(45deg, #267CFC, #FF6B00, #FFC300, #2ECC71, #7D3C98, #0072FF, #E91E63, #267CFC);
-  background-size: 300%;
-  border-radius: 20px;
-  z-index: -1 ;
-  animation: moveGradient 6s linear infinite;
-  }
-  
-  
-  .e-display-panel h2 {
-  font-size: 26px;
-  font-weight: bold;
-  color: black;
-  margin-bottom: 15px;
-  }
-  
-  /* Highlighted text in h2 */
-  .e-display-panel h2 .highlight {
-  color: #267CFC;
-  }
-  
-  /* Style the paragraph */
-  .e-display-panel .content-text {
-  font-size: 16px;
-  color: #666;
-  line-height: 1.6;
-  text-align: justify;
-  margin-bottom: 20px;
-  }
-  
-  /* Keyframes for moving the gradient */
-  @keyframes moveGradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-  
-  /* Common gradient animation */
-  .gradient-animation::before {
+/* Animated Gradient Border */
+.e-display-panel::before {
     content: "";
     position: absolute;
-    inset: 0;
-    background-size: 200% 200%;
-    animation: moveGradient 4s ease infinite;
-  }
-  
-  /* Individual gradient styles */
-  .ae-gradient-1::before {
-    background: linear-gradient(45deg, #267CFC, #FF6B00); /* Blue + Vibrant Orange */
-  }
-  
-  .ae-gradient-2::before {
-    background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
-  }
-  
-  .ae-gradient-3::before {
-    background: linear-gradient(45deg, #4c1962, #eb68cc); /* Deep Purple + Rich Blue */
-  }
-  
-  .ae-gradient-4::before {
-    background: linear-gradient(45deg, #E91E63, #267CFC); /* Bold Pink + Primary Blue */
-  }
-  
-  /* Apply animation to all gradient elements */
-  .ae-gradient-1::before,
-  .ae-gradient-2::before,
-  .ae-gradient-3::before,
-  .ae-gradient-4::before {
-    background-size: 200% 200%;
-    animation: moveGradient 4s ease infinite;
-  }
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: linear-gradient(45deg, #FF6B00, #FFC300, #2ECC71);
+    background-size: 300%;
+    border-radius: 20px;
+    z-index: -1 ;
+    animation: moveGradient 6s linear infinite;
+    }
+    
+    
+    .e-display-panel h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 15px;
+    }
+    
+    /* Highlighted text in h2 */
+    .e-display-panel h2 .highlight {
+    color: #267CFC;
+    }
+    
+    /* Style the paragraph */
+    .e-display-panel .content-text {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 20px;
+    }
+    /* Keyframes for moving the gradient */
+    @keyframes moveGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Common gradient animation */
+    .gradient-animation::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: 200% 200%;
+      animation: moveGradient 4s ease infinite;
+    }
+    
+    /* Individual gradient styles */
+    .ae-gradient-1::before {
+      background: linear-gradient(45deg, #267CFC,brown); /* Blue + Vibrant Orange */
+    }
+    
+    .ae-gradient-2::before {
+      background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
+    }
+    
+    .ae-gradient-3::before {
+      background: linear-gradient(45deg, #4c1962, #eb68cc); /* Deep Purple + Rich Blue */
+    }
+    
+    .ae-gradient-4::before {
+      background: linear-gradient(45deg, #267CFC,brown);/* Bold Pink + Primary Blue */
+    }
+    .ae-gradient-5::before {
+      background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
+    }
+    .ae-gradient-6::before {
+      background: linear-gradient(45deg, #4c1962, #eb68cc); /* Deep Purple + Rich Blue */
+    }
+    
+    /* Apply animation to all gradient elements */
+    .ae-gradient-1::before,
+    .ae-gradient-2::before,
+    .ae-gradient-3::before,
+    .ae-gradient-4::before,
+    .ae-gradient-5::before,
+    .ae-gradient-6::before {
+      background-size: 200% 200%;
+      animation: moveGradient 4s ease infinite;
+    }
   
   @media (max-width: 768px) {
   .e-accordion {

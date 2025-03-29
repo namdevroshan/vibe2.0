@@ -46,11 +46,11 @@ $role =  mysqli_real_escape_string($conn,trim($_POST['role']));
     $mail->Port = 465; // "The port".
 
     $mail->From = '';
-    // $mail->addAddress(EMAIL);
-    // $mail->addAddress('info@saa.ai');
-    // $mail->addAddress('accounts@saa.ai');
-    // $mail->addAddress('AmitSaxena@saa.ai');
-    $mail->addAddress('roshannamdevbpl@gmail.com');
+    $mail->addAddress(EMAIL);
+    $mail->addAddress('info@saa.ai');
+    $mail->addAddress('accounts@saa.ai');
+    $mail->addAddress('AmitSaxena@saa.ai');
+    // $mail->addAddress('roshannamdevbpl@gmail.com');
     $mail->isHTML(true); // Set email format to HTML
     // $mail->setFrom('admin@saa.ai', 'SAA Admin');
     $mail->setFrom(EMAIL, 'SAA Admin');

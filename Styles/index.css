@@ -67,6 +67,19 @@
   margin: -47px auto 0 582px;
   padding: 11px 35px;
 }
+/* Glow & Scale Effect */
+.u-section-1 .u-btn-1:hover {
+  box-shadow: 0 0 15px #267CFC;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+.u-section-1 .u-btn-2:hover {
+  box-shadow: 0 0 15px #267CFC;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+
 
 .u-section-1 .u-image-1 {
   width: 1148px;
@@ -146,7 +159,7 @@
   .u-section-1 .u-btn-1 {
     margin-left: 250px; /* Adjust button position */
     font-size: 1rem; /* Adjust font size */
-    padding: 8px 16px;
+    padding: 8px 27px;
   }
 
   .u-section-1 .u-btn-2 {
@@ -187,7 +200,7 @@
     /* margin-top: 1px; */
     margin-left: 526px; /* Adjust button position */
     font-size: 1rem; /* Adjust font size */
-    padding: 8px 16px;
+    padding: 8px 27px;
   }
 
   .u-section-1 .u-image-1 {
@@ -220,7 +233,7 @@
     /* margin-top: 1px; */
     margin-left: 450px; /* Adjust button position */
     font-size: 1rem; /* Adjust font size */
-    padding: 8px 16px;
+    padding: 8px 27px;
   }
 
   .u-section-1 .u-image-1 {
@@ -2314,14 +2327,14 @@
   font-family: Inter;
   font-weight: 600;
   font-size: 2.5rem;
-  width: 700px;
+  width: 850px;
   margin: 60px auto 0;
 }
 
 .u-section-10 .u-text-2 {
   font-family: Inter;
   font-size: 1rem;
-  width: 680px;
+  width: 733px;
   margin: 12px auto 0;
 }
 
@@ -2425,12 +2438,13 @@
 }
 
 .u-section-10 .u-text-6 {
-  font-weight: 400;
-  font-style: normal;
   box-shadow: 0px 0px 0px  rgba(0,0,0,0);
   text-shadow: 0px 0px 0px rgba(0,0,0,0);
-  font-size: 1rem;
-  margin: 27px 8px 0 89px;
+  transition-duration: 0.5s;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.125rem;
+  margin: 36px 16px 0 97px;
 }
 
 .u-section-10 .u-list-item-3 {
@@ -4468,7 +4482,7 @@
 }
 
 .e-accordion-header:hover {
-  background-color: #F5F5F5;
+  background-color: #fff;
 }
 
 .icon {
@@ -4508,7 +4522,9 @@ border-left: 4px solid #267CFC;
   margin-left: 30px;
   position: relative;
   background-repeat: no-repeat;
-  background-image: url("/images/Frame2.png");
+  background-image: url("/images/Group\ 15.svg");
+  
+  
   background-size: cover;
   border-radius: 15px;
   /* padding: 38px;
@@ -4531,7 +4547,7 @@ border-left: 4px solid #267CFC;
   margin-left: 30px;
   position: relative;
   background-repeat: no-repeat;
-  background-image: url("/images/Frame2.png");
+  background-image: url("/images/background-img-readytosection.svg");
   background-size: cover;
   border-radius: 15px;
   width: 80%;
@@ -4606,7 +4622,7 @@ margin-bottom: 20px;
 
 /* Individual gradient styles */
 .ae-gradient-1::before {
-  background: linear-gradient(45deg, #267CFC, #FF6B00); /* Blue + Vibrant Orange */
+  background: linear-gradient(45deg, #267CFC,brown); /* Blue + Vibrant Orange */
 }
 
 .ae-gradient-2::before {
@@ -4618,14 +4634,22 @@ margin-bottom: 20px;
 }
 
 .ae-gradient-4::before {
-  background: linear-gradient(45deg, #E91E63, #267CFC); /* Bold Pink + Primary Blue */
+  background: linear-gradient(45deg, #267CFC,brown);/* Bold Pink + Primary Blue */
+}
+.ae-gradient-5::before {
+  background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
+}
+.ae-gradient-6::before {
+  background: linear-gradient(45deg, #4c1962, #eb68cc); /* Deep Purple + Rich Blue */
 }
 
 /* Apply animation to all gradient elements */
 .ae-gradient-1::before,
 .ae-gradient-2::before,
 .ae-gradient-3::before,
-.ae-gradient-4::before {
+.ae-gradient-4::before,
+.ae-gradient-5::before,
+.ae-gradient-6::before {
   background-size: 200% 200%;
   animation: moveGradient 4s ease infinite;
 }
@@ -4726,9 +4750,14 @@ margin-bottom: 30px;
 
 
 .on-button-arrow{
-  top: 18px;
-  margin-right: 399px;
+  top: 19px;
+  margin-right: 396px;
   height: 30px;
+  --animation-custom_in-translate_x: 0px;
+  --animation-custom_in-translate_y: 300px;
+  --animation-custom_in-opacity: 0;
+  --animation-custom_in-rotate: 0deg;
+  --animation-custom_in-scale: 1;
 }
 @media (max-width: 1182px) {
   .on-button-arrow {
@@ -4879,12 +4908,18 @@ margin-bottom: 30px;
 
 .line {
   position: absolute;
-bottom: 108px;
+bottom: 133px;
 left: 55px;
 }
 .line-error {
   position: absolute;
-bottom: 82px;
+bottom: 108px;
+left: 55px;
+}
+
+.line3 {
+  position: absolute;
+bottom: 108px;
 left: 55px;
 }
 @media (max-width: 1024px) {
