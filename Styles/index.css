@@ -48,6 +48,7 @@
   --animation-custom_in-scale: 1;
   margin: 44px auto 0 385px;
   padding: 11px 19px;
+  width: 70px;
 }
 
 .u-section-1 .u-btn-2 {
@@ -63,8 +64,8 @@
   --animation-custom_in-opacity: 0;
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
-  margin: -44px auto 0 582px;
-  padding: 11px 19px;
+  margin: -47px auto 0 582px;
+  padding: 11px 35px;
 }
 
 .u-section-1 .u-image-1 {
@@ -1086,7 +1087,7 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-image: url("/images/Frame2.png");
-  background-size: contain;
+  /* background-size: contain; */
 }
 
 .u-section-6 .u-sheet-1 {

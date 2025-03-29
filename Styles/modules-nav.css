@@ -25438,6 +25438,14 @@
   a.u-button-style.u-border-2 {
     border-width: 2px;
   }
+
+  a.u-button-style.u-border-2:focus,
+  a.u-button-style.u-border-2:active {
+      border-width: 2px; /* Maintain border thickness */
+      border-style: solid; /* Ensure border stays visible */
+      outline: none; /* Remove default browser focus outline */
+  }
+
   .u-shape-svg.u-border-2 {
     stroke-width: 2px;
   }
@@ -36223,9 +36231,9 @@
   }
   .u-button-style.u-border-white:hover,
   .u-button-style.u-border-white:focus {
-    border-color: transparent !important;
+    /* border-color: transparent !important;
     color: #e6e6e6 !important;
-    background-color: transparent !important;
+    background-color: transparent !important; */
   }
   .u-border-hover-white:hover,
   .u-border-hover-white:focus,
