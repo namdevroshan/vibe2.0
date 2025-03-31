@@ -2394,7 +2394,7 @@
   box-shadow: 0px 0px 0px  rgba(0,0,0,0);
   text-shadow: 0px 0px 0px rgba(0,0,0,0);
   font-size: 1rem;
-  margin: 27px 8px 0 89px;
+  margin: 27px 8px 0 69px;
 }
 
 .u-section-10 .u-list-item-2 {
@@ -2443,8 +2443,8 @@
   transition-duration: 0.5s;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.125rem;
-  margin: 36px 16px 0 97px;
+  font-size: 1rem;
+  margin: 36px 16px 0 69px;
 }
 
 .u-section-10 .u-list-item-3 {
@@ -2493,7 +2493,7 @@
   box-shadow: 0px 0px 0px  rgba(0,0,0,0);
   text-shadow: 0px 0px 0px rgba(0,0,0,0);
   font-size: 1rem;
-  margin: 27px 8px 0 89px;
+  margin: 27px 8px 0 69px;
 }
 
 .u-section-10 .u-list-item-4 {
@@ -2542,7 +2542,7 @@
   box-shadow: 0px 0px 0px  rgba(0,0,0,0);
   text-shadow: 0px 0px 0px rgba(0,0,0,0);
   font-size: 1rem;
-  margin: 27px 8px 0 89px;
+  margin: 27px 8px 0 69px;
 }
 
 .u-section-10 .u-list-item-5 {
@@ -2591,7 +2591,7 @@
   box-shadow: 0px 0px 0px  rgba(0,0,0,0);
   text-shadow: 0px 0px 0px rgba(0,0,0,0);
   font-size: 1rem;
-  margin: 27px 8px 0 89px;
+  margin: 27px 8px 0 69px;
 }
 
 .u-section-10 .u-list-item-6 {
@@ -2640,7 +2640,7 @@
   box-shadow: 0px 0px 0px  rgba(0,0,0,0);
   text-shadow: 0px 0px 0px rgba(0,0,0,0);
   font-size: 1rem;
-  margin: 27px 8px 0 89px;
+  margin: 27px 8px 0 69px;
 }
 
 .u-section-10 .u-list-item-7 {
@@ -2689,7 +2689,7 @@
   box-shadow: 0px 0px 0px  rgba(0,0,0,0);
   text-shadow: 0px 0px 0px rgba(0,0,0,0);
   font-size: 1rem;
-  margin: 27px 8px 0 89px;
+  margin: 27px 8px 0 69px;
 }
 
 .u-section-10 .u-list-item-8 {
@@ -2738,7 +2738,7 @@
   box-shadow: 0px 0px 0px  rgba(0,0,0,0);
   text-shadow: 0px 0px 0px rgba(0,0,0,0);
   font-size: 1rem;
-  margin: 27px 8px 0 89px;
+  margin: 27px 8px 0 69px;
 }
 
 .u-section-10 .u-list-item-9 {
@@ -2787,7 +2787,7 @@
   box-shadow: 0px 0px 0px  rgba(0,0,0,0);
   text-shadow: 0px 0px 0px rgba(0,0,0,0);
   font-size: 1rem;
-  margin: 27px 8px 0 89px;
+  margin: 27px 8px 0 69px;
 }
 
 @media (max-width: 1199px) {
@@ -4911,12 +4911,12 @@ margin-bottom: 30px;
 
 .line {
   position: absolute;
-bottom: 133px;
+bottom: 109px;
 left: 55px;
 }
 .line-error {
   position: absolute;
-bottom: 108px;
+bottom: 82px;
 left: 55px;
 }
 
@@ -4925,15 +4925,20 @@ left: 55px;
 bottom: 133px;
 left: 55px;
 }
+.line4 {
+  position: absolute;
+bottom: 108px;
+left: 55px;
+}
 @media (max-width: 1024px) {
   .line,
-  .line-error,.line3{
+  .line-error,.line3,.line4{
       display: none !important;
   }
 }
 @media (max-width: 1182px) {
   .line,
-  .line-error,.line3{
+  .line-error,.line3,.line4{
       display: none !important;
   }
 }
