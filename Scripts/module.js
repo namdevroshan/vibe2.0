@@ -1,34 +1,44 @@
-const gradients = ["ae-gradient-1", "ae-gradient-2", "ae-gradient-3", "ae-gradient-4" ,"ae-gradient-5" ,"ae-gradient-6"];
+const gradients = [
+    "ae-gradient-1", "ae-gradient-2", "ae-gradient-3",
+    "ae-gradient-4", "ae-gradient-5", "ae-gradient-6"
+];
+
 document.querySelectorAll(".e-accordion-item").forEach((item, index) => {
     item.addEventListener("click", function () {
-        let content = this.querySelector(".e-accordion-content");
         let isActive = this.classList.contains("active");
 
-        // Remove active class from all items and hide content
+        // Remove active class from all items
         document.querySelectorAll(".e-accordion-item").forEach((i) => {
             i.classList.remove("active");
-            let iContent = i.querySelector(".e-accordion-content");
-            if (iContent) {
-                iContent.classList.remove("active", "slide-right");
-            }
         });
 
         // Toggle active state
         if (!isActive) {
             this.classList.add("active");
-            if (content) {
-                content.classList.add("active", "slide-right");
-            }
         }
 
-        // Update display panel
+        // Update display panel with smooth zoom-in animation
         let displayPanel = document.getElementById("displayPanel");
         if (displayPanel) {
             let dataContent = this.getAttribute("data-content") || "No content available";
-            displayPanel.innerHTML = dataContent;
 
-            // Ensure gradients array exists before using it
-            if (typeof gradients !== "undefined" && gradients.length > 0) {
+            // Keep panel styling intact but animate content
+            let tempDiv = document.createElement("div");
+            tempDiv.innerHTML = dataContent;
+            tempDiv.style.opacity = "0";
+            tempDiv.style.transform = "scale(0.9)";  // Start smaller
+            tempDiv.style.transition = "opacity 0.3s ease-out, transform 0.3s ease-out";
+
+            displayPanel.innerHTML = ""; // Clear old content without affecting design
+            displayPanel.appendChild(tempDiv);
+
+            setTimeout(() => {
+                tempDiv.style.opacity = "1";
+                tempDiv.style.transform = "scale(1)"; // Smooth zoom-in effect
+            }, 10);
+
+            // Apply gradient
+            if (gradients.length > 0) {
                 displayPanel.classList.remove(...gradients);
                 displayPanel.classList.add(gradients[index % gradients.length]);
             }
@@ -143,9 +153,3 @@ const menuToggle = document.querySelector('.hamburger-menu');
 
 
 
-
-
-
-
-
-        

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Infographic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: white;
+            border: 10px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .info-box {
+            display: flex
+;
+    align-items: center;
+    position: absolute;
+    background: white;
+    padding: 15px;
+    border-radius: 28px;
+    border: solid;
+    border-color: #1871ef;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 186px;
+    height: 32px;
+        }
+        .info-box:nth-child(2) { top: -60px; left: -250px; }
+        .info-box:nth-child(3) { top: 10px; left: -250px; }
+        .info-box:nth-child(4) { top: 80px; left: -250px; }
+        .info-box:nth-child(5) { top: 150px; left: -250px; }
+        .info-box:nth-child(6) { top: -60px; right: -250px; }
+        .info-box:nth-child(7) { top: 10px; right: -250px; }
+        .info-box:nth-child(8) { top: 80px; right: -250px; }
+        .info-box:nth-child(9) { top: 150px; right: -250px; }
+        .info-box span {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1871ef;
+            color: white;
+            border-radius: 50%;
+            font-size: 16px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .text-box {
+           
+            padding: 10px;
+           
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle">BUSINESS INFOGRAPHIC</div>
+        <div class="info-box"><span>01</span><div class="text-box">Example text here.</div></div>
+        <div class="info-box"><span>02</span><div class="text-box">Example text here.</div></div>
+        <div class="info-box"><span>03</span><div class="text-box">Example text here.</div></div>
+        <div class="info-box"><span>04</span><div class="text-box">Example text here.</div></div>
+        <div class="info-box"><span>01</span><div class="text-box">Example text here.</div></div>
+        <div class="info-box"><span>02</span><div class="text-box">Example text here.</div></div>
+        <div class="info-box"><span>03</span><div class="text-box">Example text here.</div></div>
+        <div class="info-box"><span>04</span><div class="text-box">Example text here.</div></div>
+    </div>
+</body>
+</html>

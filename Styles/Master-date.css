@@ -2937,50 +2937,50 @@
     
     /* Style the paragraph */
     .e-display-panel .content-text {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
-    text-align: justify;
-    margin-bottom: 20px;
-    }
-    /* Keyframes for moving the gradient */
-    @keyframes moveGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-    /* Common gradient animation */
-    .gradient-animation::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-size: 200% 200%;
-      animation: moveGradient 4s ease infinite;
-    }
-    
-    /* Individual gradient styles */
-    .ae-gradient-1::before {
-      background: linear-gradient(45deg, #267CFC,brown); /* Blue + Vibrant Orange */
-    }
-    
-    .ae-gradient-2::before {
-      background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
-    }
-    
-    .ae-gradient-3::before {
-      background: linear-gradient(45deg, #4c1962, #eb68cc); /* Deep Purple + Rich Blue */
-    }
-    
-    .ae-gradient-4::before {
-      background: linear-gradient(45deg, #267CFC,brown);/* Bold Pink + Primary Blue */
-    }
-    .ae-gradient-5::before {
-      background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
-    }
-    .ae-gradient-6::before {
-      background: linear-gradient(45deg, #4c1962, #eb68cc); /* Deep Purple + Rich Blue */
-    }
+        font-size: 16px;
+        color: #666;
+        line-height: 1.6;
+        text-align: start;
+        margin-bottom: 20px;
+        }
+        /* Keyframes for moving the gradient */
+        @keyframes moveGradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        
+        /* Common gradient animation */
+        .gradient-animation::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-size: 200% 200%;
+          animation: moveGradient 4s ease infinite;
+        }
+        
+        /* Individual gradient styles */
+        .ae-gradient-1::before {
+          background: linear-gradient(45deg, #267CFC,brown); /* Blue + Vibrant Orange */
+        }
+        
+        .ae-gradient-2::before {
+          background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
+        }
+        
+        .ae-gradient-3::before {
+          background: linear-gradient(45deg, #4c1962, #eb09c494); /* Deep Purple + Rich Blue */
+        }
+        
+        .ae-gradient-4::before {
+          background: linear-gradient(45deg, #267CFC,brown);/* Bold Pink + Primary Blue */
+        }
+        .ae-gradient-5::before {
+          background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
+        }
+        .ae-gradient-6::before {
+          background: linear-gradient(45deg, #4c1962, #eb09c494); /* Deep Purple + Rich Blue */
+        }
     
     /* Apply animation to all gradient elements */
     .ae-gradient-1::before,

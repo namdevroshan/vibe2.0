@@ -2945,7 +2945,7 @@
     font-size: 16px;
     color: #666;
     line-height: 1.6;
-    text-align: justify;
+    text-align: start;
     margin-bottom: 20px;
     }
     /* Keyframes for moving the gradient */
@@ -2974,7 +2974,7 @@
     }
     
     .ae-gradient-3::before {
-      background: linear-gradient(45deg, #4c1962, #eb68cc); /* Deep Purple + Rich Blue */
+      background: linear-gradient(45deg, #4c1962, #eb09c494); /* Deep Purple + Rich Blue */
     }
     
     .ae-gradient-4::before {
@@ -2984,7 +2984,7 @@
       background: linear-gradient(45deg, #FFC300, #2ECC71); /* Warm Yellow + Fresh Green */
     }
     .ae-gradient-6::before {
-      background: linear-gradient(45deg, #4c1962, #eb68cc); /* Deep Purple + Rich Blue */
+      background: linear-gradient(45deg, #4c1962, #eb09c494); /* Deep Purple + Rich Blue */
     }
     
     /* Apply animation to all gradient elements */
@@ -3022,8 +3022,8 @@
   .e-description {
     font-family: Inter;
     font-size: 1.125rem;
-  padding-left: 14%;
-  padding-right: 14%;
+  padding-left: 13.5%;
+  padding-right: 13.5%;
   color: #000000;
   
   line-height: 1.6;
