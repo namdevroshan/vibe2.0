@@ -51657,6 +51657,8 @@
   }
   
   .u-footer .u-text-9 {
+    margin-left: -28px;
+    width: 187px;
     font-family: Inter;
     font-weight: 500;
   }
@@ -51832,7 +51834,8 @@
       margin-bottom: 0;
     }
   }
-  @media (max-width: 767px) {
+  
+  @media (max-width: 768px) {
     .u-footer .u-sheet-1 {
       min-height: 607px;
     }
@@ -51892,6 +51895,10 @@
   
     .u-footer .u-social-icons-2 {
       margin-bottom: 38px;
+    }
+    .u-footer .u-text-9 {
+      margin-left: -49px;
+      
     }
   }
   @media (max-width: 575px) {
@@ -51965,8 +51972,11 @@
       margin-left: 0;
       margin-right: 0;
     }
+    .u-footer .u-text-9 {
+      margin-left: -49px;
+      
+    }
   }
-  
    /*begin-variables base-font-size*/ 
    html { font-size: 16px; }
    /*end-variables base-font-size*/

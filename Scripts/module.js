@@ -126,7 +126,7 @@ const menuToggle = document.querySelector('.hamburger-menu');
                 "/Modules/Data-transform.html",
                 "/Modules/Data-model.html",
                 "/Modules/Data-workflow.html",
-                "/Modules/Master-date.html"
+                "/Modules/Master-data.html"
             ];
         
             // Select all .u-list-item elements

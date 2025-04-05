@@ -70,12 +70,12 @@
 /* Glow & Scale Effect */
 .u-section-1 .u-btn-1:hover {
   box-shadow: 0 0 15px #267CFC;
-  transform: scale(1.1);
+  transform: scale(1.03);
   transition: all 0.3s ease-in-out;
 }
 .u-section-1 .u-btn-2:hover {
   box-shadow: 0 0 15px #267CFC;
-  transform: scale(1.1);
+  transform: scale(1.03);
   transition: all 0.3s ease-in-out;
 }
 
@@ -2311,7 +2311,7 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-image: url("/images/Frame2.png");
-  background-size: contain;
+  /* background-size: contain; */
 }
 
 .u-section-10 .u-sheet-1 {
@@ -2335,7 +2335,7 @@
   font-family: Inter;
   font-size: 1rem;
   width: 733px;
-  margin: 12px auto 0;
+  margin: 33px auto 18px;
 }
 
 .u-section-10 .u-list-1 {
@@ -4607,6 +4607,13 @@ color: #267CFC;
       text-align: start;
       margin-bottom: 20px;
       }
+      .e-display-panel .content-text li {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+        text-align: start;
+        margin-bottom: 20px;
+        }
       /* Keyframes for moving the gradient */
       @keyframes moveGradient {
         0% { background-position: 0% 50%; }
@@ -5010,14 +5017,18 @@ left: 55px;
 
 /* Buttons with gradient */
 .cta-buttons button {
-  padding: 11px 19px;
+  z-index: 200;
+  background-image: none;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   border: none;
   border-radius: 40px;
   cursor: pointer;
-  font-weight: 700;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  padding: 11px 19px;
+  width: fit-content;
 }
 
 .cta-buttons .primary {

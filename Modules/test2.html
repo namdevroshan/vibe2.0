@@ -46,7 +46,7 @@
             text-align: center;
             font-size: 18px;
             font-weight: bold;
-            margin-bottom: 129px;
+            /* margin-bottom: 1px; */
         }
         .circle::before {
             content: "";
@@ -78,7 +78,7 @@
             border: solid;
             border-color: #267CFC;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 373px;
+            width: 547px;
             margin: 10px 0;
         }
 
@@ -101,14 +101,14 @@
         }
 
         /* Positioning info-boxes */
-        .info-box:nth-child(2) { top: -90px; left: -413px; border-color: #f3c552;}
-        .info-box:nth-child(3) { top: 0px; left: -413px; border-color: #ec7828;}
-        .info-box:nth-child(4) { top: 90px; left: -413px; border-color: #d04d9a;}
-        .info-box:nth-child(5) { top: 180px; left: -413px; border-color: #795ba5;}
-        .info-box:nth-child(6) { top: -90px; right: -413px; border-color: #f3c552;}
-        .info-box:nth-child(7) { top: 0px; right: -413px; border-color: #ec7828;}
-        .info-box:nth-child(8) { top: 90px; right: -413px; border-color: #d04d9a;}
-        .info-box:nth-child(9) { top: 180px; right: -413px; border-color: #795ba5;}
+        .info-box:nth-child(2) { top: -90px; left: -595px; border-color: #f3c552;}
+        .info-box:nth-child(3) { top: 47px; left: -595px; border-color: #ec7828;}
+        .info-box:nth-child(4) { top: 185px; left: -595px; border-color: #d04d9a;}
+        .info-box:nth-child(5) { top: 327px; left: -595px; border-color: #795ba5;}
+        .info-box:nth-child(6) { top: -90px; right: -595px; border-color: #f3c552;}
+        .info-box:nth-child(7) { top: 47px; right: -595px; border-color: #ec7828;}
+        .info-box:nth-child(8) { top: 185px; right: -595px; border-color: #d04d9a;}
+        .info-box:nth-child(9) { top: 327px; right: -595px; border-color: #795ba5;}
 
         .info-box span {
             width: 40px;
@@ -126,10 +126,11 @@
         
         
         .text-box {
-            padding: 10px;
+            margin-top: 14px;
+            padding: 4px;
             flex-grow: 1;
+            font-weight: 600;
         }
-
         
     </style>
 </head>
@@ -140,14 +141,14 @@
                 Key Features of VIBE Data Extraction
             </div>
         </div>
-        <div class="info-box"><span style="background-color:#f3c552;"><i class="fas fa-chart-line"></i></span><div class="text-box">Full & Delta Load Support </div></div>
-        <div class="info-box"><span style="background-color:#ec7828;"><i class="fas fa-lightbulb"></i></span><div class="text-box">Large-Scale Data Ingestion</div></div>
-        <div class="info-box"><span style="background-color:#d04d9a;"><i class="fas fa-cogs"></i></span><div class="text-box">User-Centric Workflow Design Interface</div></div>
-        <div class="info-box"><span style="background-color:#795ba5;"><i class="fas fa-users"></i></span><div class="text-box">Automated Data Pipelines</div></div>
-        <div class="info-box"><span style="background-color:#f3c552;"><i class="fas fa-briefcase"></i></span><div class="text-box">Advanced Workflow Analytics </div></div>
-        <div class="info-box"><span style="background-color:#ec7828;"><i class="fas fa-tasks"></i></span><div class="text-box">Efficient Monitoring System</div></div>
-        <div class="info-box"><span style="background-color:#d04d9a;"><i class="fas fa-bullseye"></i></span><div class="text-box">Secure Data Handling</div></div>
-        <div class="info-box"><span style="background-color:#795ba5;"><i class="fas fa-rocket"></i></span><div class="text-box">Example text here.</div></div>
+        <div class="info-box"><span style="background-color:#f3c552;"><i class="fas fa-chart-line"></i></span><div class="text-box">Full & Delta Load Support <p style="font-weight: 100;font-size: 13px;">Choose between full data loads or delta (incremental) data loads, enabling efficient data extraction from SQL-based systems for optimized performance.</p></div></div>
+        <div class="info-box"><span style="background-color:#ec7828;"><i class="fas fa-lightbulb"></i></span><div class="text-box">Large-Scale Data Ingestion <p style="font-weight: 100;font-size: 13px;"> Facilitates large volumes of data ingestion from diverse Electronic Patient Record (EPR) systems within NHS trusts, ensuring smooth data migration and integration.</p></div></div>
+        <div class="info-box"><span style="background-color:#d04d9a;"><i class="fas fa-cogs"></i></span><div class="text-box">User-Centric Workflow Design Interface <p style="font-weight: 100;font-size: 13px;"> A user-friendly interface allows you to design, automate, and manage workflows without complex coding.</p></div></div>
+        <div class="info-box"><span style="background-color:#795ba5;"><i class="fas fa-users"></i></span><div class="text-box">Automated Data Pipelines <p style="font-weight: 100;font-size: 13px;"> Streamline incremental data updates, reducing manual intervention and ensuring real-time data availability for decision-making.</p></div></div>
+        <div class="info-box"><span style="background-color:#f3c552;"><i class="fas fa-briefcase"></i></span><div class="text-box">Advanced Workflow Analytics <p style="font-weight: 100;font-size: 13px;">Gain detailed insights into data pipelines with real-time analytics on job status, success rates, and data integration accuracy.</p></div></div>
+        <div class="info-box"><span style="background-color:#ec7828;"><i class="fas fa-tasks"></i></span><div class="text-box">Efficient Monitoring System <p style="font-weight: 100;font-size: 13px;"> Track extraction jobs, monitor table loads, and review system-specific data workflows effortlessly. </p></div></div>
+        <div class="info-box"><span style="background-color:#d04d9a;"><i class="fas fa-bullseye"></i></span><div class="text-box">Secure Data Handling <p style="font-weight: 100;font-size: 13px;"> Built-in compliance with NHS data governance policies ensures secure data extraction processes.</p></div></div>
+        <div class="info-box"><span style="background-color:#795ba5;"><i class="fas fa-rocket"></i></span><div class="text-box">Example text here. <p style="font-weight: 100;font-size: 13px;"> Enables efficient data loading for both initial and incremental updates.</p></div></div>
     </div>
 </body>
 </html>
