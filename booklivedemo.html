@@ -47,14 +47,14 @@
     <link rel="stylesheet" href="Styles/index.css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google tag (gtag.js) -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-LDGWBEYWNJ"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LDGWBEYWNJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-LDGWBEYWNJ');
-</script> -->
+</script>
     
         <script class="u-script" type="text/javascript" src="/Scripts/jquery.js" defer=""></script>
         <script class="u-script" type="text/javascript" src="/Scripts/nicepage.js" defer=""></script>
@@ -425,7 +425,7 @@ h4 {
 
     </style>
   </head>
-  <body data-home-page="Page-8.html" data-home-page-title="Page 8" data-path-to-root="./" data-include-products="false" class="u-body u-overlap u-overlap-transparent u-xl-mode" data-lang="en">
+  <body data-home-page="index.html" data-home-page-title="Booklivedemo" data-path-to-root="./" data-include-products="false" class="u-body u-overlap u-overlap-transparent u-xl-mode" data-lang="en">
     <header class="navbar" style="padding-left: 50px;padding-right:50px;">
       <div class="brand-container">
         <a href="https://saa.ai/index.php">
@@ -496,17 +496,18 @@ h4 {
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="firstName" class="label-text"
-                >First Name <span class="text-danger">*</span></label
+                >Name <span class="text-danger">*</span></label
               >
               <input
                 type="text"
                 class="form-control input-field"
                 id="firstName"
                 name="firstName"
+					 placeholder="Full name"
                 required
               />
             </div>
-            <div class="col-md-6 mb-3">
+            <!--<div class="col-md-6 mb-3">
               <label for="lastName" class="label-text"
                 >Last Name <span class="text-danger">*</span></label
               >
@@ -515,13 +516,11 @@ h4 {
                 class="form-control input-field"
                 id="lastName"
                 name="lastName"
+					 placeholder="Last name"
                 required
               />
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-6 mb-3">
+            </div>-->
+			  <div class="col-md-6 mb-3">
               <label for="email" class="label-text"
                 >Business Email <span class="text-danger">*</span></label
               >
@@ -530,9 +529,32 @@ h4 {
                 class="form-control input-field"
                 id="email"
                 name="email"
+					 placeholder="Your email"
                 required
               />
             </div>
+          </div>
+
+          <div class="row">
+            
+			   <div class="col-md-6 mb-3">
+              <label for="country" class="label-text"
+              >Country/Region <span class="text-danger">*</span></label
+            >
+            <select
+              class="form-select dropdown-field"
+              id="country"
+              name="country"
+              required
+              onchange="updateCountryCode()"
+            >
+              <option data-code="+91" value="India">India</option>
+              <option data-code="+1" value="United States">United States</option>
+              <option data-code="+44" value="United Kingdom" selected>United Kingdom</option>
+              <option data-code="+61" value="Australia">Australia</option>
+            </select>
+            </div>
+			  
             <div class="col-md-6 mb-3">
               <label for="phone" class="label-text"
                 >Phone <span class="text-danger">*</span></label
@@ -552,32 +574,26 @@ h4 {
               </div>
               <span class="text-danger" id="phonenumberalert">Please enter 10 digits number</span>
             </div>
+			  
+			 
           </div>
 
-          <div class="mb-3">
-            <label for="country" class="label-text"
-              >Country/Region <span class="text-danger">*</span></label
-            >
-            <select
-              class="form-select dropdown-field"
-              id="country"
-              name="country"
-              required
-              onchange="updateCountryCode()"
-            >
-              <option data-code="+91" value="India">India</option>
-              <option data-code="+1" value="United States">United States</option>
-              <option data-code="+44" value="United Kingdom" selected>United Kingdom</option>
-              <option data-code="+61" value="Australia">Australia</option>
-            </select>
-          </div>
 
           <div class="mb-3">
             <label for="role" class="label-text"
               >Which best describes you?
               <span class="text-danger">*</span></label
             >
-            <select
+			  <input
+                  type="text"
+                  class="form-control input-field mb-3"
+                  id="role"
+                  name="role"
+					 maxlength="50"
+					 placeholder="Your job role"
+                  required
+                />
+             <!--<select
               class="form-select dropdown-field"
               id="role"
               name="role"
@@ -588,16 +604,24 @@ h4 {
               <option value="Business Owner">Business Owner</option>
               <option value="Student">Student</option>
               <option value="Other">Other</option>
-            </select>
+            </select> -->
+          </div>
+			
+			<div class="mb-3">
+            <label for="country" class="label-text"
+              >Share your requirements <span class="fw-normal text-secondary">(Optional)</span></label
+            >
+				<textarea class="form-control" name="requirements" id="requirements" placeholder="Your business requirements" rows="5"></textarea>
+            
           </div>
 
-          <div class="mb-3">
+          <!--<div class="mb-3">
             <p>
               During the trial, we may share guidance on features. We may also
               check in on your progress and follow up after the trial.
-            </p>
+            </p> -->
             <!-- <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div> -->
-          </div>
+           <!--</div>-->
 
           <button
             type="submit"

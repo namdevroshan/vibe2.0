@@ -5,19 +5,19 @@ require('../includes/conn.php');
 
 
 $firstName =  mysqli_real_escape_string($conn,trim($_POST['firstName']));
-// $lastName =  mysqli_real_escape_string($conn,trim($_POST['lastName']));
+$lastName =  mysqli_real_escape_string($conn,trim($_POST['lastName']));
 $email =  mysqli_real_escape_string($conn,trim($_POST['email']));
 $phone =  mysqli_real_escape_string($conn,trim($_POST['phone']));
 $countryCodeNumber =  mysqli_real_escape_string($conn,trim($_POST['countryCodeNumber']));
 $country =  mysqli_real_escape_string($conn,trim($_POST['country']));
 $role =  mysqli_real_escape_string($conn,trim($_POST['role']));
-$requirements = mysqli_real_escape_string($conn,trim($_POST['requirements']));
- 
+
+
     $phoneNumber =  $countryCodeNumber . ' ' . $phone;
-    $name = $firstName;
+    $name = $firstName . ' ' . $lastName;
     // var_dump($email);
 
-    $sql = "INSERT INTO `vibe_demo_requests`(`firstname`, `email`, `phone`, `country`, `role`, `requirements`, `product_name`) VALUES ('{$firstName}','{$email}','{$phoneNumber}','{$country}','{$role}', '{$requirements}', 'vibe')";
+    $sql = "INSERT INTO `vibe_demo_requests`(`firstname`, `lastname`, `email`, `phone`, `country`, `role`, `product_name`) VALUES ('{$firstName}','{$lastName}','{$email}','{$phoneNumber}','{$country}','{$role}', 'vibe')";
     $result = mysqli_query($conn, $sql);
 
     require('./vendor/autoload.php');
@@ -38,23 +38,21 @@ $requirements = mysqli_real_escape_string($conn,trim($_POST['requirements']));
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = "ssl"; // or ssl: check your SMTP server configuration
     $mail->Host     = "mail.saa.ai"; // SMTP server
-    // $mail->Host     = "smtp.gmail.com";
+    
 
 
     $mail->Username = EMAIL; // "The account"
-    $mail->Password = PASS; //a@1 "The password"
-    $mail->Port = 465; // "The port".
+    $mail->Password = PASS; 
+    $mail->Port = 465; 
 
     $mail->From = '';
     $mail->addAddress(EMAIL);
-
-    $mail->addAddress('itsbunty12398@gmail.com');
-    // $mail->addAddress('info@saa.ai');
-    // $mail->addAddress('accounts@saa.ai');
-    // $mail->addAddress('AmitSaxena@saa.ai');
-    // $mail->addAddress('roshannamdevbpl@gmail.com');
+    $mail->addAddress('info@saa.ai');
+    $mail->addAddress('accounts@saa.ai');
+    $mail->addAddress('AmitSaxena@saa.ai');
+   
     $mail->isHTML(true); // Set email format to HTML
-    // $mail->setFrom('admin@saa.ai', 'SAA Admin');
+    
     $mail->setFrom(EMAIL, 'SAA Admin');
 
     $mail->Subject = 'VIBE Demo Request';
@@ -82,10 +80,6 @@ $requirements = mysqli_real_escape_string($conn,trim($_POST['requirements']));
                       <td style='border: 1px solid'>$role</td>
                   </tr>
                   <tr>
-                      <th style='border: 1px solid; text-align: left;'>Requirements: </th>
-                      <td style='border: 1px solid'>$requirements</td>
-                  </tr>
-                  <tr>
                       <th style='border: 1px solid; text-align: left;'>Demo requested for product: </th>
                       <td style='border: 1px solid'>Vibe</td>
                   </tr>
@@ -95,14 +89,10 @@ $requirements = mysqli_real_escape_string($conn,trim($_POST['requirements']));
               Email: info@saa.ai | hr@saa.ai";
 
 
-    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-    //$mail->WordWrap = 100; // "The lenght of the text."  
+   
 
     if (!$mail->Send()) {
-        // print("Error: message not sent\n");
-        // print($mail->ErrorInfo . "\n");
-        // var_dump($mail->ErrorInfo . "\n");
+        
         $response = [
             'status' => 'ok',
             'success' => false,
@@ -116,5 +106,5 @@ $requirements = mysqli_real_escape_string($conn,trim($_POST['requirements']));
             'message' => '<p>Your request has been received! Our team will reach out to you shortly to schedule your VIBE demo session.</p>'
         ];
         print_r(json_encode($response));
-        // echo "<script>window.location='thankyoupage.php'</script>";
+        
     }
