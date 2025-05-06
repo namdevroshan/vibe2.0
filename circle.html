@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Core Capabilities of VIBE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --vibe-primary: #4F46E5;
+      --vibe-secondary: #8B5CF6;
+      --vibe-radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+    }
+
+    .vibe-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 48px 16px;
+    }
+
+    .vibe-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .vibe-header h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 16px;
+    }
+
+    .vibe-header span {
+      color: #267cfc;
+    }
+
+    .vibe-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    @media (min-width: 1024px) {
+      .vibe-wrapper {
+        flex-direction: row;
+        align-items: stretch;
+      }
+    }
+
+    .vibe-img-box {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .vibe-img-box img {
+      max-width: 100%;
+      border-radius: 16px;
+    }
+
+    @media (min-width: 1024px) {
+      .vibe-img-box {
+        width: 50%;
+      }
+
+      .vibe-img-box img {
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+      }
+    }
+
+    .vibe-content-box {
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .vibe-content-box {
+        width: 50%;
+      }
+    }
+
+    .vibe-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      padding: 32px;
+      border-radius: var(--vibe-radius);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
+      transition: transform 0.5s;
+    }
+
+    .vibe-card:hover {
+      transform: scale(1.01);
+    }
+
+    .vibe-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .vibe-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 32px;
+      animation: vibe-float-in 0.8s ease-out both;
+    }
+
+    .vibe-item:nth-child(2) { animation-delay: 0.2s; }
+    .vibe-item:nth-child(3) { animation-delay: 0.4s; }
+    .vibe-item:nth-child(4) { animation-delay: 0.6s; }
+    .vibe-item:nth-child(5) { animation-delay: 0.8s; }
+    .vibe-item:nth-child(6) { animation-delay: 1s; }
+
+    @keyframes vibe-float-in {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .vibe-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(to bottom right, rgba(79, 70, 229, 0.1), rgba(139, 92, 246, 0.1));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      color: var(--vibe-primary);
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .vibe-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0 0 4px;
+      color: #111827;
+    }
+
+    .vibe-desc {
+      font-size: 0.875rem;
+      color: #4b5563;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="vibe-container">
+    <header class="vibe-header">
+      <h1>Core Capabilities of VIBE<br><span>Data Extraction</span></h1>
+    </header>
+
+    <div class="vibe-wrapper">
+      <!-- Image Section -->
+      <div class="vibe-img-box">
+        <img src="/images/feature chartnewwwwwwwwwwwwww img (4).svg" alt="Training Diagram">
+      </div>
+
+      <!-- Content Section -->
+      <div class="vibe-content-box">
+        <div class="vibe-card">
+          <ul class="vibe-list">
+            <li class="vibe-item">
+              <div class="vibe-icon"><i class="ri-check-line"></i></div>
+              <div>
+                <h3 class="vibe-title">Full & Delta Load Support</h3>
+                <p class="vibe-desc">Switch between full or incremental data loads optimized for performance.</p>
+              </div>
+            </li>
+
+            <li class="vibe-item">
+              <div class="vibe-icon"><i class="ri-arrow-up-down-line"></i></div>
+              <div>
+                <h3 class="vibe-title">Large-Scale Data Ingestion</h3>
+                <p class="vibe-desc">Ingest data from NHS EPR systems across diverse infrastructures.</p>
+              </div>
+            </li>
+
+            <li class="vibe-item">
+              <div class="vibe-icon"><i class="ri-layout-grid-line"></i></div>
+              <div>
+                <h3 class="vibe-title">Workflow Design Interface</h3>
+                <p class="vibe-desc">Build and manage workflows visually—no code needed.</p>
+              </div>
+            </li>
+
+            <li class="vibe-item">
+              <div class="vibe-icon"><i class="ri-bar-chart-line"></i></div>
+              <div>
+                <h3 class="vibe-title">Advanced Workflow Analytics</h3>
+                <p class="vibe-desc">Monitor pipeline health, performance, and integration metrics live.</p>
+              </div>
+            </li>
+
+            <li class="vibe-item">
+              <div class="vibe-icon"><i class="ri-refresh-line"></i></div>
+              <div>
+                <h3 class="vibe-title">Automated Data Pipelines</h3>
+                <p class="vibe-desc">Trigger real-time updates with zero manual intervention.</p>
+              </div>
+            </li>
+
+            <li class="vibe-item">
+              <div class="vibe-icon"><i class="ri-dashboard-line"></i></div>
+              <div>
+                <h3 class="vibe-title">Efficient Monitoring System</h3>
+                <p class="vibe-desc">Live tracking of jobs, workflows, and system logs in one place.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

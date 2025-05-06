@@ -143,7 +143,9 @@
       margin-top: 18px;
       margin-right: auto;
     }
-  } .u-section-2 {
+  } 
+  
+  .u-section-2 {
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-image: url("/images/Frame2.png");

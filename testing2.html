@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Infographics</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#FF5733',secondary:'#2ECC71'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .infographic-circle {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #FF5733 0deg 90deg,
+                #2ECC71 90deg 180deg,
+                #95A5A6 180deg 270deg,
+                #3498DB 270deg 360deg
+            );
+        }
+        .infographic-circle::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            border-radius: 50%;
+            background-color: white;
+        }
+        .connector-line {
+            position: relative;
+            height: 2px;
+        }
+        .connector-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .left-dot {
+            right: 0;
+        }
+        .right-dot {
+            left: 0;
+        }
+        .indicator-bars {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            margin-top: 8px;
+        }
+        .indicator-bar {
+            width: 16px;
+            height: 4px;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen">
+    <div class="container mx-auto px-4 py-16">
+        <div class="flex flex-col items-center justify-center">
+            <h1 class="text-3xl font-bold text-gray-800 mb-12">Business Infographics Dashboard</h1>
+            
+            <div class="flex flex-wrap justify-center items-center w-full gap-8 mb-16">
+                <div class="w-full max-w-5xl flex flex-wrap justify-center items-center">
+                    <!-- Left side content blocks -->
+                    <div class="w-full md:w-5/12 space-y-6 pr-4">
+                        <!-- Block 01 -->
+                        <div class="flex items-start gap-4">
+                            <div class="connector-line bg-[#FF5733] flex-grow relative">
+                                <div class="connector-dot left-dot bg-[#FF5733]"></div>
+                            </div>
+                            <div class="rounded-lg border border-[#FF5733] p-4 w-full">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-full bg-[#FF5733] text-white flex items-center justify-center font-bold">01</div>
+                                    <h3 class="font-semibold text-gray-800">Revenue Growth</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Exceptional and sequential evaluation of quarterly revenue growth across all regions, showing positive trend in last quarter.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Block 02 -->
+                        <div class="flex items-start gap-4">
+                            <div class="connector-line bg-[#2ECC71] flex-grow relative">
+                                <div class="connector-dot left-dot bg-[#2ECC71]"></div>
+                            </div>
+                            <div class="rounded-lg border border-[#2ECC71] p-4 w-full">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-full bg-[#2ECC71] text-white flex items-center justify-center font-bold">02</div>
+                                    <h3 class="font-semibold text-gray-800">Market Expansion</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Strategic market penetration in emerging economies with 27% increase in customer acquisition and 18% higher retention rates.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Block 03 -->
+                        <div class="flex items-start gap-4">
+                            <div class="connector-line bg-[#95A5A6] flex-grow relative">
+                                <div class="connector-dot left-dot bg-[#95A5A6]"></div>
+                            </div>
+                            <div class="rounded-lg border border-[#95A5A6] p-4 w-full">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-full bg-[#95A5A6] text-white flex items-center justify-center font-bold">03</div>
+                                    <h3 class="font-semibold text-gray-800">Operational Efficiency</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Process optimization resulted in 15% reduction in operational costs while maintaining quality standards across all departments.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Block 04 -->
+                        <div class="flex items-start gap-4">
+                            <div class="connector-line bg-[#3498DB] flex-grow relative">
+                                <div class="connector-dot left-dot bg-[#3498DB]"></div>
+                            </div>
+                            <div class="rounded-lg border border-[#3498DB] p-4 w-full">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-full bg-[#3498DB] text-white flex items-center justify-center font-bold">04</div>
+                                    <h3 class="font-semibold text-gray-800">Innovation Pipeline</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">R&D investments yielded 8 new patents and 12 product enhancements, positioning the company as an industry innovator.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Center circle -->
+                    <div class="w-full md:w-2/12 flex flex-col items-center justify-center py-8">
+                        <div class="infographic-circle flex items-center justify-center">
+                            <div class="z-10 text-center">
+                                <p class="font-bold text-gray-700 text-sm">BUSINESS</p>
+                                <p class="font-bold text-gray-700 text-sm">INFOGRAPHICS</p>
+                                <div class="indicator-bars">
+                                    <div class="indicator-bar bg-[#FF5733]"></div>
+                                    <div class="indicator-bar bg-[#2ECC71]"></div>
+                                    <div class="indicator-bar bg-[#95A5A6]"></div>
+                                    <div class="indicator-bar bg-[#3498DB]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side content blocks -->
+                    <div class="w-full md:w-5/12 space-y-6 pl-4">
+                        <!-- Block 01 -->
+                        <div class="flex items-start gap-4">
+                            <div class="rounded-lg border border-[#FF5733] p-4 w-full">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-full bg-[#FF5733] text-white flex items-center justify-center font-bold">01</div>
+                                    <h3 class="font-semibold text-gray-800">Customer Satisfaction</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Net Promoter Score increased by 18 points year-over-year, with customer satisfaction ratings reaching 92% across all service touchpoints.</p>
+                            </div>
+                            <div class="connector-line bg-[#FF5733] flex-grow relative">
+                                <div class="connector-dot right-dot bg-[#FF5733]"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Block 02 -->
+                        <div class="flex items-start gap-4">
+                            <div class="rounded-lg border border-[#2ECC71] p-4 w-full">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-full bg-[#2ECC71] text-white flex items-center justify-center font-bold">02</div>
+                                    <h3 class="font-semibold text-gray-800">Digital Transformation</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Implementation of AI-driven analytics platform resulted in 32% improvement in decision-making speed and 24% increase in forecast accuracy.</p>
+                            </div>
+                            <div class="connector-line bg-[#2ECC71] flex-grow relative">
+                                <div class="connector-dot right-dot bg-[#2ECC71]"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Block 03 -->
+                        <div class="flex items-start gap-4">
+                            <div class="rounded-lg border border-[#95A5A6] p-4 w-full">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-full bg-[#95A5A6] text-white flex items-center justify-center font-bold">03</div>
+                                    <h3 class="font-semibold text-gray-800">Sustainability Metrics</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Carbon footprint reduced by 22% through green initiatives, renewable energy adoption, and sustainable supply chain management practices.</p>
+                            </div>
+                            <div class="connector-line bg-[#95A5A6] flex-grow relative">
+                                <div class="connector-dot right-dot bg-[#95A5A6]"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Block 04 -->
+                        <div class="flex items-start gap-4">
+                            <div class="rounded-lg border border-[#3498DB] p-4 w-full">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-8 h-8 rounded-full bg-[#3498DB] text-white flex items-center justify-center font-bold">04</div>
+                                    <h3 class="font-semibold text-gray-800">Talent Development</h3>
+                                </div>
+                                <p class="text-sm text-gray-600">Employee engagement increased to 87% with implementation of leadership development programs and skill enhancement initiatives across departments.</p>
+                            </div>
+                            <div class="connector-line bg-[#3498DB] flex-grow relative">
+                                <div class="connector-dot right-dot bg-[#3498DB]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w-full max-w-5xl mt-16">
+                <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Key Performance Indicators</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Chart 1: Revenue Growth -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Quarterly Revenue Growth</h3>
+                        <div id="revenueChart" class="w-full h-64"></div>
+                    </div>
+                    
+                    <!-- Chart 2: Market Share -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Market Share Distribution</h3>
+                        <div id="marketShareChart" class="w-full h-64"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Revenue Growth Chart
+            const revenueChart = echarts.init(document.getElementById('revenueChart'));
+            const revenueOption = {
+                animation: false,
+                tooltip: {
+                    trigger: 'axis',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                grid: {
+                    top: 10,
+                    right: 10,
+                    bottom: 20,
+                    left: 40
+                },
+                xAxis: {
+                    type: 'category',
+                    data: ['Q1', 'Q2', 'Q3', 'Q4'],
+                    axisLine: {
+                        lineStyle: {
+                            color: '#1f2937'
+                        }
+                    }
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLine: {
+                        lineStyle: {
+                            color: '#1f2937'
+                        }
+                    },
+                    splitLine: {
+                        lineStyle: {
+                            color: 'rgba(31, 41, 55, 0.1)'
+                        }
+                    }
+                },
+                series: [
+                    {
+                        name: 'Revenue',
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'none',
+                        lineStyle: {
+                            width: 3,
+                            color: 'rgba(87, 181, 231, 1)'
+                        },
+                        areaStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0,
+                                    color: 'rgba(87, 181, 231, 0.2)'
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(87, 181, 231, 0.01)'
+                                }]
+                            }
+                        },
+                        data: [2.4, 3.2, 3.8, 4.6]
+                    },
+                    {
+                        name: 'Growth Rate',
+                        type: 'line',
+                        smooth: true,
+                        symbol: 'none',
+                        lineStyle: {
+                            width: 3,
+                            color: 'rgba(141, 211, 199, 1)'
+                        },
+                        areaStyle: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0,
+                                    color: 'rgba(141, 211, 199, 0.2)'
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(141, 211, 199, 0.01)'
+                                }]
+                            }
+                        },
+                        data: [1.8, 2.6, 3.2, 3.9]
+                    }
+                ]
+            };
+            revenueChart.setOption(revenueOption);
+            
+            // Market Share Chart
+            const marketShareChart = echarts.init(document.getElementById('marketShareChart'));
+            const marketShareOption = {
+                animation: false,
+                tooltip: {
+                    trigger: 'item',
+                    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                    textStyle: {
+                        color: '#1f2937'
+                    }
+                },
+                series: [
+                    {
+                        name: 'Market Share',
+                        type: 'pie',
+                        radius: ['40%', '70%'],
+                        avoidLabelOverlap: false,
+                        itemStyle: {
+                            borderRadius: 8,
+                            borderColor: '#fff',
+                            borderWidth: 2
+                        },
+                        label: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            label: {
+                                show: true,
+                                fontSize: '14',
+                                fontWeight: 'bold'
+                            }
+                        },
+                        labelLine: {
+                            show: false
+                        },
+                        data: [
+                            { value: 38, name: 'Product A', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+                            { value: 25, name: 'Product B', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+                            { value: 22, name: 'Product C', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+                            { value: 15, name: 'Others', itemStyle: { color: 'rgba(252, 141, 98, 1)' } }
+                        ]
+                    }
+                ]
+            };
+            marketShareChart.setOption(marketShareOption);
+            
+            // Resize charts when window resizes
+            window.addEventListener('resize', function() {
+                revenueChart.resize();
+                marketShareChart.resize();
+            });
+        });
+    </script>
+</body>
+</html>

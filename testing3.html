@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Key Features of VIBE Data Extraction</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#302C69',       // Dark Blue (from the header)
+                        secondary: '#514CB5',     // Light Blue (secondary accent)
+                        accent: '#26A69A',        // Teal accent for contrast
+                        feature1bg: '#E3F2FD',    // Very light blue for card 1 background
+                        feature1text: '#1E88E5',  // Blue for card 1 text/accent
+                        feature2bg: '#E0F7FA',    // Light Cyan for card 2 background
+                        feature2text: '#00ACC1',  // Cyan for card 2 text/accent
+                        feature3bg: '#F3E5F5',    // Light Purple for card 3 background
+                        feature3text: '#9C27B0',  // Purple for card 3 text/accent
+                        feature4bg: '#E8F5E9',    // Light Green for card 4 background
+                        feature4text: '#43A047',  // Green for card 4 text/accent
+                        feature5bg: '#FFFDE7',    // Light Yellow for card 5 background
+                        feature5text: '#F9A825',  // Amber for card 5 text/accent
+                        feature6bg: '#FCE4EC',    // Light Pink for card 6 background
+                        feature6text: '#E91E63',  // Pink for card 6 text/accent
+                    },
+                    borderRadius: {
+                        button: '8px',
+                    },
+                },
+            },
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .focus-arrow-right {
+            clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
+        }
+        .focus-arrow-left {
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 15% 100%, 0 50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col items-center px-4 py-10">
+    <div class="w-full max-w-5xl">
+        <h1 class="text-[3rem] font-bold mb-12 text-black text-center text-primary"> <span class="text-blue-600"> Key Features of VIBE</span> <br>
+            Data Extraction</h1>
+
+        <div class="space-y-10">
+            <div class="flex items-start gap-4 group">
+    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shadow">
+        <i class="ri-swap-line ri-2x"></i>
+    </div>
+    <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+        <div class="flex">
+            <div class="focus-arrow-right bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-5 flex items-center">
+                <span class="text-xl font-semibold">Full & Delta Load Support</span>
+            </div>
+            <div class="flex-1 bg-feature1bg px-6 py-5"> <p class="text-gray-700">Choose between full data loads or delta (incremental) data loads, enabling efficient data extraction from SQL-based systems for optimized performance.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div class="flex items-start gap-4 flex-row-reverse group">
+                <div class="w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-600 shadow">
+                    <i class="ri-database-line ri-2x"></i> </div>
+                <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div class="flex">
+                        <div class="flex-1 bg-white px-6 py-5 text-right">
+                            <p class="text-gray-700">Facilitates large volumes of data ingestion from diverse Electronic Patient Record (EPR) systems within NHS trusts, ensuring smooth data migration and integration.</p>
+                        </div>
+                        <div class="focus-arrow-left bg-gradient-to-l from-cyan-500 to-cyan-600 text-white px-6 py-5 flex items-center">
+                            <span class="text-xl font-semibold">Large-Scale Data Ingestion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 group">
+                <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center text-purple-700 shadow">
+                    <i class="ri-git-branch-line ri-2x"></i></div>
+                <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div class="flex">
+                        <div class="focus-arrow-right bg-gradient-to-r from-purple-400 to-purple-500 text-white px-6 py-5 flex items-center">
+                            <span class="text-xl font-semibold">User-Centric Workflow Design Interface</span>
+                        </div>
+                        <div class="flex-1 bg-feature3bg px-6 py-5"> <p class="text-gray-700">A user-friendly interface allows you to design, automate, and manage workflows without complex coding.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 flex-row-reverse group">
+                <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-green-600 shadow">
+                    <i class="ri-repeat-2-line ri-2x"></i> </div>
+                <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div class="flex">
+                        <div class="flex-1 bg-white px-6 py-5 text-right">
+                            <p class="text-gray-700">Streamline incremental data updates, reducing manual intervention and ensuring real-time data availability for decision-making.</p>
+                        </div>
+                        <div class="focus-arrow-left bg-gradient-to-l from-green-500 to-green-600 text-white px-6 py-5 flex items-center">
+                            <span class="text-xl font-semibold">Automated Data Pipelines</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 group">
+                <div class="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center text-amber-500 shadow">
+                    <i class="ri-line-chart-line ri-2x"></i> </div>
+                <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div class="flex">
+                        <div class="focus-arrow-right bg-gradient-to-r from-amber-400 to-amber-500 text-white px-6 py-5 flex items-center">
+                            <span class="text-xl font-semibold">Advanced Workflow Analytics</span>
+                        </div>
+                        <div class="flex-1 bg-feature5bg px-6 py-5"> <p class="text-gray-700">Gain detailed insights into data pipelines with real-time analytics on job status, success rates, and data integration accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 flex-row-reverse group">
+                <div class="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 shadow">
+                    <i class="ri-dashboard-line ri-2x"></i> </div>
+                <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div class="flex">
+                        <div class="flex-1 bg-white px-6 py-5 text-right">
+                            <p class="text-gray-700">Track extraction jobs, monitor table loads, and review system-specific data workflows effortlessly.</p>
+                        </div>
+                        <div class="focus-arrow-left bg-gradient-to-l from-pink-500 to-pink-600 text-white px-6 py-5 flex items-center">
+                            <span class="text-xl font-semibold">Efficient Monitoring System</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Key Features of VIBE Data Extraction</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#302C69',       // Dark Blue (from the header)
+                        secondary: '#514CB5',     // Light Blue (secondary accent)
+                        accent: '#26A69A',        // Teal accent for contrast
+                        cardBg: '#E3F2FD',         // Light blue for all card backgrounds
+                        cardText: '#1E88E5',       // Primary blue for icon text
+                        cardGradientStart: '#64B5F6', // Lighter blue for gradient start
+                        cardGradientEnd: '#42A5F5',   // Medium blue for gradient end
+                    },
+                    borderRadius: {
+                        button: '8px',
+                    },
+                },
+            },
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .focus-arrow-right {
+            border-top-right-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+        .focus-arrow-left {
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col items-center px-4 py-10">
+    <div class="w-full max-w-5xl">
+        <h1 class="text-[3rem] font-bold mb-12 text-black text-center text-primary"> <span class="text-blue-600"> Key Features of VIBE</span> <br>
+            Data Extraction</h1>
+
+        <div class="space-y-10">
+            <div class="flex items-start gap-4 group">
+                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shadow">
+                    <i class="ri-swap-line ri-2x"></i>
+                </div>
+                <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div class="flex">
+                        <div class="focus-arrow-right bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-5 flex items-center">
+                            <span class="text-xl font-semibold">Full & Delta Load Support</span>
+                        </div>
+                        <div class="flex-1 bg-cardBg px-6 py-5"> <p class="text-gray-700">Choose between full data loads or delta (incremental) data loads, enabling efficient data extraction from SQL-based systems for optimized performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 flex-row-reverse group">
+                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shadow">
+                    <i class="ri-database-line ri-2x"></i>
+                </div>
+                <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div class="flex">
+                        <div class="flex-1 bg-white px-6 py-5 text-right">
+                            <p class="text-gray-700">Facilitates large volumes of data ingestion from diverse Electronic Patient Record (EPR) systems within NHS trusts, ensuring smooth data migration and integration.</p>
+                        </div>
+                        <div class="focus-arrow-left bg-gradient-to-l from-blue-500 to-blue-600 text-white px-6 py-5 flex items-center">
+                            <span class="text-xl font-semibold">Large-Scale Data Ingestion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 group">
+                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shadow">
+                    <i class="ri-git-branch-line ri-2x"></i></div>
+                <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div class="flex">
+                        <div class="focus-arrow-right bg-gradient-to-r from-blue-400 to-blue-500 text-white px-6 py-5 flex items-center">
+                            <span class="text-xl font-semibold">User-Centric Workflow Design Interface</span>
+                        </div>
+                        <div class="flex-1 bg-cardBg px-6 py-5"> <p class="text-gray-700">A user-friendly interface allows you to design, automate, and manage workflows without complex coding.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 flex-row-reverse group">
+                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shadow">
+                    <i class="ri-repeat-2-line ri-2x"></i> </div>
+                <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div class="flex">
+                        <div class="flex-1 bg-white px-6 py-5 text-right">
+                            <p class="text-gray-700">Streamline incremental data updates, reducing manual intervention and ensuring real-time data availability for decision-making.</p>
+                        </div>
+                        <div class="focus-arrow-left bg-gradient-to-l from-blue-500 to-blue-600 text-white px-6 py-5 flex items-center">
+                            <span class="text-xl font-semibold">Automated Data Pipelines</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4 group">
+                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shadow">
+                    <i class="ri-line-chart-line ri-2x"></i> </div>
+                <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div class="flex">
+                        <div class="focus-arrow-right bg-gradient-to-r from-blue-400 to-blue-500 text-white px-6 py-5 flex items-center">
+                            <span class="text-xl font-semibold">Advanced Workflow Analytics</span>
+                        </div>
+                        <div class="flex-1 bg-cardBg px-6 py-5"> <p class="text-gray-700">Gain detailed insights into data pipelines with real-time analytics on job status, success rates, and data integration accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-start gap-4 flex-row-reverse group">
+                <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shadow">
+                    <i class="ri-dashboard-line ri-2x"></i> </div>
+                <div class="flex-1 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                    <div class="flex">
+                        <div class="flex-1 bg-white px-6 py-5 text-right">
+                            <p class="text-gray-700">Track extraction jobs, monitor table loads, and review system-specific data workflows effortlessly.</p>
+                        </div>
+                        <div class="focus-arrow-left bg-gradient-to-l from-blue-500 to-blue-600 text-white px-6 py-5 flex items-center">
+                            <span class="text-xl font-semibold">Efficient Monitoring System</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html> -->
