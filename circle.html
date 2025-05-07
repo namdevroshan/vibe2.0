@@ -62,13 +62,16 @@
     .vibe-img-box {
       width: 100%;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
     }
 
     .vibe-img-box img {
-      max-width: 100%;
-      border-radius: 16px;
+      width: 100%;
+      height: 587px;
+      border-radius: var(--vibe-radius);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e5e7eb;
+      object-fit: cover;
     }
 
     @media (min-width: 1024px) {
@@ -97,9 +100,6 @@
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(8px);
       padding: 32px;
-      border-radius: var(--vibe-radius);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      border: 1px solid #e5e7eb;
       transition: transform 0.5s;
     }
 
@@ -158,69 +158,172 @@
       color: #4b5563;
       margin: 0;
     }
+
+    @media (max-width: 1023px) {
+      .vibe-wrapper {
+        flex-direction: column;
+      }
+
+      .vibe-img-box,
+      .vibe-content-box {
+        width: 100% !important;
+      }
+
+      .vibe-img-box img {
+        height: auto;
+        max-height: 400px;
+        object-fit: cover;
+      }
+
+      .vibe-container {
+        padding: 24px 12px;
+      }
+
+      .vibe-header h1 {
+        font-size: 2rem;
+      }
+
+      .vibe-card {
+        padding: 24px;
+      }
+
+      .vibe-item {
+        gap: 12px;
+        margin-bottom: 24px;
+      }
+
+      .vibe-title {
+        font-size: 1.125rem;
+      }
+
+      .vibe-desc {
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="vibe-container">
-    <header class="vibe-header">
-      <h1>Core Capabilities of VIBE<br><span>Data Extraction</span></h1>
+    <header class="vibe-header" style="margin-bottom: 90px;">
+      <h1>Core Capabilities of <br><span>VIBE Data Transformation</span></h1>
     </header>
 
     <div class="vibe-wrapper">
-      <!-- Image Section -->
+      <!-- Left Side: Image + Short Content -->
       <div class="vibe-img-box">
-        <img src="/images/feature chartnewwwwwwwwwwwwww img (4).svg" alt="Training Diagram">
+        <img src="/images/feature chartnewwwwwwwwwwwwww img (4).svg" alt="Training Diagram" />
+        <div class="vibe-content-box" style="margin-top:20px;width: 100%;">
+          <div class="vibe-card">
+            <ul class="vibe-list">
+              <li class="vibe-item">
+                <div class="vibe-icon"><i class="ri-folder-chart-line"></i></div>
+                <div>
+                  <h3 class="vibe-title">Project-Based Architecture</h3>
+                  <p class="vibe-desc">
+                    <strong>🔹Projects</strong> - Organize data workflows into distinct projects for streamlined management.<br>
+                    <strong>🔹Repositories</strong> - Each project can contain multiple repositories holding transformation and load rules.
+                  </p>
+                </div>
+              </li>
+
+              <li class="vibe-item">
+                <div class="vibe-icon"><i class="ri-node-tree"></i></div>
+                <div>
+                  <h3 class="vibe-title">Hierarchical Workflow Design</h3>
+                  <p class="vibe-desc">
+                    <strong>🔹Repositories</strong> - Contain multiple transformation rules.<br>
+                    <strong>🔹Buckets</strong> - Group activities within repositories, which can run sequentially or in parallel.<br>
+                    <strong>🔹Activities</strong> - Define specific tasks with transformation logic.<br>
+                    <strong>🔹Code Layer</strong> - The lowest-level node, where transformation rules are implemented.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
 
-      <!-- Content Section -->
+      <!-- Right Side: Main Feature Cards -->
       <div class="vibe-content-box">
         <div class="vibe-card">
           <ul class="vibe-list">
             <li class="vibe-item">
-              <div class="vibe-icon"><i class="ri-check-line"></i></div>
+              <div class="vibe-icon"><i class="ri-git-merge-line"></i></div>
               <div>
-                <h3 class="vibe-title">Full & Delta Load Support</h3>
-                <p class="vibe-desc">Switch between full or incremental data loads optimized for performance.</p>
-              </div>
-            </li>
-
-            <li class="vibe-item">
-              <div class="vibe-icon"><i class="ri-arrow-up-down-line"></i></div>
-              <div>
-                <h3 class="vibe-title">Large-Scale Data Ingestion</h3>
-                <p class="vibe-desc">Ingest data from NHS EPR systems across diverse infrastructures.</p>
-              </div>
-            </li>
-
-            <li class="vibe-item">
-              <div class="vibe-icon"><i class="ri-layout-grid-line"></i></div>
-              <div>
-                <h3 class="vibe-title">Workflow Design Interface</h3>
-                <p class="vibe-desc">Build and manage workflows visually—no code needed.</p>
+                <h3 class="vibe-title">DevOps & Source Control Integration</h3>
+                <p class="vibe-desc">
+                  Seamlessly integrates with DevOps tools and Git for versioning, collaboration, and deployment automation.
+                </p>
               </div>
             </li>
 
             <li class="vibe-item">
               <div class="vibe-icon"><i class="ri-bar-chart-line"></i></div>
               <div>
-                <h3 class="vibe-title">Advanced Workflow Analytics</h3>
-                <p class="vibe-desc">Monitor pipeline health, performance, and integration metrics live.</p>
+                <h3 class="vibe-title">Scalability & Performance</h3>
+                <p class="vibe-desc">
+                  Easily scalable to manage large datasets and workflows for enterprise-level integration.
+                </p>
               </div>
             </li>
 
             <li class="vibe-item">
-              <div class="vibe-icon"><i class="ri-refresh-line"></i></div>
+              <div class="vibe-icon"><i class="ri-swap-line"></i></div>
               <div>
-                <h3 class="vibe-title">Automated Data Pipelines</h3>
-                <p class="vibe-desc">Trigger real-time updates with zero manual intervention.</p>
+                <h3 class="vibe-title">Parallel & Sequential Execution</h3>
+                <p class="vibe-desc">
+                  Supports both parallel processing and sequential execution for flexible data handling.
+                </p>
               </div>
             </li>
 
             <li class="vibe-item">
-              <div class="vibe-icon"><i class="ri-dashboard-line"></i></div>
+              <div class="vibe-icon"><i class="ri-brain-line"></i></div>
               <div>
-                <h3 class="vibe-title">Efficient Monitoring System</h3>
-                <p class="vibe-desc">Live tracking of jobs, workflows, and system logs in one place.</p>
+                <h3 class="vibe-title">AI-Driven Analytics</h3>
+                <p class="vibe-desc">
+                  Predictive analytics and AI-assisted insights to support healthcare decisions.
+                </p>
+              </div>
+            </li>
+
+            <li class="vibe-item">
+              <div class="vibe-icon"><i class="ri-code-s-slash-line"></i></div>
+              <div>
+                <h3 class="vibe-title">Multi-Language Support</h3>
+                <p class="vibe-desc">
+                  Use SQL, Python, and PowerShell for flexible data transformation.
+                </p>
+              </div>
+            </li>
+
+            <li class="vibe-item">
+              <div class="vibe-icon"><i class="ri-hospital-line"></i></div>
+              <div>
+                <h3 class="vibe-title">Healthcare-Optimized</h3>
+                <p class="vibe-desc">
+                  Over 10,000 predefined rules for healthcare data, supporting 20+ EPR systems.
+                </p>
+              </div>
+            </li>
+
+            <li class="vibe-item">
+              <div class="vibe-icon"><i class="fas fa-plug"></i></div>
+              <div>
+                <h3 class="vibe-title">Integration Ready</h3>
+                <p class="vibe-desc">
+                  Compatible with Microsoft Fabric and other cloud-based infrastructures.
+                </p>
+              </div>
+            </li>
+
+            <li class="vibe-item">
+              <div class="vibe-icon"><i class="ri-loop-left-line"></i></div>
+              <div>
+                <h3 class="vibe-title">CI/CD Pipeline Automation</h3>
+                <p class="vibe-desc">
+                  Built-in Continuous Integration & Deployment (CI/CD) ensures fast, automated updates.
+                </p>
               </div>
             </li>
           </ul>
